@@ -15,7 +15,7 @@
   <meta property="og:description" content="">
   <meta property="og:image" content="">
 
-  <link rel="icon" type="image/x-icon" href="/images/tinysoup.ico">
+  <link rel="icon" type="image/x-icon" href="images/tinysoup.ico">
   <link rel="stylesheet" href="style.css">
  
   <style>
@@ -228,10 +228,34 @@
       font-weight: normal;
       letter-spacing: 0.05em;
     }
-
+    .recipe a.link{
+      color: inherit;
+      text-decoration: underline;
+    }
     .recipe img{
       width: 50%;
+      display: block;
+      margin: auto;
     }
+
+    .recipe .hovertext{
+      text-decoration: none;
+      font-style: italic;
+    }
+    .hovertext:hover ~ .hoverimage, .hoverimage:hover{
+      color:coral;
+      display: block;
+    }
+    .recipe .hoverimage{
+      display: none;
+      position: absolute;
+      /* margin-top:0; */
+      transform: translate(-50%,-112%);
+      left: 50%;
+    }
+    /* .hoverimage:hover{
+      display:block;
+    } */
 
     .hovericon{
       visibility: hidden;
@@ -351,7 +375,7 @@
         <div id="horst" class="recipe">
           <a href="#" class="close">X</a>
           <div class="content">
-            <img src="images/horst.png">
+            <img src="images/horst/horst.jpg">
 
           <h2>Horst</h2>
           <hr>
@@ -361,10 +385,10 @@
           </p>
           <p>The project HORST has different elements to it:</p>
           <ul>
-            <li> A sex toy (HORST_mychickpic) in the shape of a giant chicken illustrates both his misogynous worldview and his fondness for meat.</li>
-            <li>An abstracted <a href="https://youtu.be/RYRGXWpjqqw" target="_blank">mash-up</a> (HORST_becamegif) of five blockbuster films convey the narcissistic personality of the tough hero.</li>
-            <li>A corset (HORST_corsetpic) alludes to his insecurity about his body and the six-pack he lacks.</li>
-            <li>In a modified version of the first-person shooter game (HORST_gamepic) UltimateDOOM, one can shoot the enemeies in form of the chicken.</li>
+            <li> A <a class="hovertext">sex toy</a><img class="hoverimage" src="images/horst/chicken.png" alt=""> in the shape of a giant chicken illustrates both his misogynous worldview and his fondness for meat.</li>
+            <li>An abstracted <a class="hovertext link" href="https://youtu.be/RYRGXWpjqqw" target="_blank">mash-up</a><img class="hoverimage" src="images/horst/wienpic.jpg" alt=""> of five blockbuster films convey the narcissistic personality of the tough hero.</li>
+            <li>A <a class="hovertext">corset</a><img class="hoverimage" src="images/horst/corset.png" alt=""> alludes to his insecurity about his body and the six-pack he lacks.</li>
+            <li>In a modified version of the first-person <a class="hovertext">shooter game</a><img class="hoverimage" src="images/horst/game.png" alt=""> UltimateDOOM, one can shoot the enemeies in form of the chicken.</li>
           </ul>
           <p>Grim and absurd in equal measure, ‘Horst’ makes us realize just how difficult it is to be a man in a world of media clichés and shifting gender identities.</p>
           <hr>
