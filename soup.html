@@ -226,7 +226,7 @@
       z-index: 2;
       overflow: scroll;
       -webkit-mask-image: radial-gradient(#000 60%, transparent 85%);
-      padding: 300px 0;
+      padding: 100px 0 300px 0;
       cursor: crosshair;
     }
     .recipe h2{
@@ -239,6 +239,14 @@
       text-align: center;
       font-weight: normal;
       letter-spacing: 0.05em;
+    }
+    .recipe marquee h3{
+    /* match subtitle styling */
+      font-family: Arial Bold Italic, sans-serif;
+      text-transform: uppercase;
+      letter-spacing: -0.03em;
+      color: yellow;
+      -webkit-text-stroke: 0.04em black;
     }
     .recipe a.link{
       color: inherit;
@@ -393,7 +401,8 @@
 
           <h2>Horst</h2>
           <hr>
-          <h3>2021 </br> multiple media </br> graduation project</h3>
+          <marquee behavior="" direction="" scrollamount="4"><h3>2021 • multiple media • graduation project</h3></marquee>
+          <h3>2021 • multiple media • graduation project</h3>
           <hr>
           <p>I created a sextoy for my alter-ego, Horst. Horst is male, mid-forties, right-wing. Years of military service have left him struggling with his identity. He navigates a path between being respected as a man and the pitfalls of toxic masculinity. 
           </p>
