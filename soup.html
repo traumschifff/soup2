@@ -1,0 +1,489 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Sarah's site</title>
+  <meta name="description" content="">
+  <meta name="author" content="Sarah Fitterer">
+
+  <meta property="og:title" content="Sarah's site">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="">
+  <meta property="og:description" content="">
+  <meta property="og:image" content="">
+
+  <link rel="icon" type="image/x-icon" href="/images/tinysoup.ico">
+  <link rel="stylesheet" href="style.css">
+ 
+  <style>
+    @keyframes wiggle {
+	  0%   {margin: 0; transform: rotate(0deg);}
+		50%  {margin: -10px 15px; transform: rotate(-16deg);}
+	  100% {margin: 13px 11px;transform: rotate(15deg);}
+		}
+
+    .ground{
+      position: fixed;
+      background: black;
+      background: url(images/soupbackzoom.jpg) no-repeat center;
+      background-size: cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      width: 100vw;
+    }
+
+    #about{
+      position: fixed;
+      top: 0px;
+      right: 0px;
+      height: 20vh;
+      z-index: 3;
+      /* transform: translate(0, 50%); */
+    }
+
+    .bio{
+      position: fixed;
+      top: 40px;
+      right: 20px;
+      width: 380px;
+      padding: 20px;
+      /* cursor: grab; */
+      z-index: 3;
+      border-radius: 30px;
+      color: whitesmoke;
+    }
+
+    .bio details{
+      margin:0;
+      padding:0;
+      font-size: 1.6em;
+    }
+    .bio h2{
+      font-weight: normal;
+    }
+    .bio a{
+      color: white;
+      text-decoration: none;
+    }
+    .bio a:hover{
+      text-decoration: underline;
+    }
+    .bio summary{
+      /* font-weight: bold;
+      font-style: italic; */
+      font-size: 1.2em;
+    }
+
+    .bio summary:hover{
+      color: coral;
+      /* cursor:zoom-in; */
+    }
+
+    .soup{
+      position: absolute;
+      height: 100vh;
+      max-height: 100vw;
+      width: 100vw;
+      max-width: 100vh;
+      cursor: url("images/spoonright.png"), zoom-in;
+      /* border-radius: 45vh; */
+      /* border: 10px lightblue solid; */
+      /* -webkit-filter: drop-shadow(2px 2px 6px rgba(0, 0, 0, 0.6));
+	    filter: drop-shadow(2px 2px 6px rgba(0, 0, 0, 0.6)); */
+    }
+
+    .letters:hover {
+      height: 16vh;
+      -webkit-filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.6));
+	    filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.6));
+    }
+
+    .letters{
+      font-family: arial, 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      color: antiquewhite;
+      position: absolute;
+      height: 15vh;
+      -webkit-filter: drop-shadow(10px whitesmoke);
+      filter: drop-shadow(10px whitesmoke);
+      transition: 2s ease;
+    }
+
+    /* .letters:hover{
+      animation: wiggle 8s;
+    } */
+
+    .fam:hover .letters{
+      animation: wiggle 8s;
+    }
+  
+
+    .ingredient{
+      position: absolute;
+      /* display: block; */
+      height: 90px;
+      margin-top: 20px;
+      /* transform: translate(-50%,-50%); */
+      animation: wiggle 10s infinite alternate;
+      overflow: hidden;
+      transition: 0.5s ease;
+    }
+    .ingredient img{
+      width: 15vh;
+      margin-top:30px;
+      transition: 0.5s ease;
+      /* transform: translate(-50%,-50%); */
+      cursor: url("images/spoonright.png"), zoom-in;
+
+    }
+
+    .ingredient:hover{
+      /* height: 100px; */
+      margin-top: 0px;
+      -webkit-filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.6));
+	    filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.6));
+    }
+
+    .letters:hover ~ .ingredient img{
+      margin-top: 0px;
+    }
+
+    .ingredient:hover img{
+      margin-top:0px;
+    }
+
+    .recipe{
+      visibility: hidden;
+      opacity: 0;
+      background: url(images/soupbackzoom.jpg) no-repeat center;
+      background-size: cover;
+      /* background-color: gold;
+      border: 5px solid black; */
+      position: fixed;
+      right: 0;
+      top: 0;
+      width: 100vw;
+      height: 100vh;
+      /* display: flex;
+      justify-content: center;
+      align-items: center; */
+      padding: 0 20vw;
+      /* overflow-y: scroll; */
+      transition: all 0.1s;
+      z-index: 2;
+      font-size: 2em;
+      /* pointer-events: none; */
+      color: whitesmoke;
+      /* -webkit-mask-image: radial-gradient(#000 60%, transparent 85%); */
+    }
+
+    .recipe:target {
+      visibility: visible;
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .recipe:target ~ .ingredient img{
+      margin-top: 80px;
+    }
+    .recipe:target ~ .letters{
+      height: 5vh;
+    }
+    .recipe .close{
+      position: fixed;
+      height: 100%;
+      width: 100%;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      cursor: url("images/spoonright.png"), zoom-in;
+    }
+
+    .recipe .content{
+      width: 60%;
+      /* max-width: 80vh; */
+      height: 100vh;
+      /* margin: auto; */
+      position: absolute;
+      z-index: 2;
+      overflow: scroll;
+      -webkit-mask-image: radial-gradient(#000 60%, transparent 85%);
+      padding: 300px 0;
+      cursor: crosshair;
+    }
+    .recipe h2{
+      text-transform: uppercase;
+      font-weight: lighter;
+      text-align: center;
+    }
+
+    .recipe h3 {
+      text-align: center;
+      font-weight: normal;
+      letter-spacing: 0.05em;
+    }
+
+    .recipe img{
+      width: 50%;
+    }
+
+    .hovericon{
+      visibility: hidden;
+    }
+    .hovericon:hover{
+      visibility: visible;
+    }
+
+
+    img:hover + img{
+      visibility:visible;
+    }
+    
+    img.icon:hover{
+      visibility: hidden;
+    }
+
+    footer{
+      position: fixed;
+      bottom: 0px;
+      right: 20px
+    }
+    footer p{
+      color: whitesmoke;
+      text-align: left;
+      filter: drop-shadow(1px 1px 5px black);
+    }
+    footer a{
+      color: inherit;
+      /* text-decoration; */
+    }
+
+        /* Create a CSS animation to toggle sentences */
+    @keyframes toggleSentences {
+        0%, 45% {
+            opacity: 1;
+        }
+        50%, 100% {
+            opacity: 0;
+        }
+    }
+
+    .sentence{
+      font-size: 0.8em;
+    }
+
+    .sentence:nth-child(1) {
+        animation: toggleSentences 16s steps(1, end) infinite;
+        animation-delay: 0s;
+    }
+
+    .sentence:nth-child(2) {
+        animation: toggleSentences 16s steps(1, end) infinite;
+        animation-delay: 8s;
+    }
+  </style>
+
+</head>
+
+<body>
+  <div class="ground">
+
+    <div class="title">
+    <a href="/soup.html"><h1>Fittererr</h1></a>
+    <h2 class="subtitle">Research and concepts</h2>
+    </div>
+
+    <div class="bio">
+    <details>
+      <summary>ABOUT
+      </summary>
+      <img id="about" src="images/sarahstandssmall.png" alt="">
+      <H2>Hi you, what’s cookin?</H2>
+      <p>I’m Sarah and this is my website.</p>
+      <p>I'm an interdisciplinary artist and researcher working across a wide range of interests and mediums. I do end up making a lot of videos though.</p> 
+      <p>You can explore my work by clicking on different ingredients in The Soup.</p>       
+      <p>You can also:</p>
+      <a href="">> Email me</a><br>
+      <a href="">> Sign up for my Newsletter</a><br>
+      <a href="">> Download my CV</a><br>
+      <a href="">> Download my Porfolio</a><br>
+      <a href="">> Check out my Instagram</a><br>
+      <a href="">> See my work IRL</a><br>
+      <a href="">> See who I collaborated with</a>
+    </details>
+    </div>
+
+
+    <div class="soup">
+      <div id="love" class="fam">
+
+        <!-- <h2 class="letters" style="left: 62vw; top: 23%;">love</h2> -->
+        <img class="letters" src="images/power.png" style="left: 48%; top: 43%;" alt=""/>
+        <img class="letters" src="images/love.png" style="left: 32%; top: 22%;" alt=""/>
+        <img class="letters" src="images/sex.png" style="left: 32%; top: 43%;" alt=""/>
+
+
+        <a href="#shrimp" style="left:36%; top:64%;" class="ingredient">
+          <img src="images/shrimp.png">
+        </a>
+        <div id="shrimp" class="recipe">
+          <a href="#" class="close">X</a>
+          <div class="content">
+          <h2>shrimp love</h2>
+          <img src="images/shrimp.png">
+          <hr>
+          <h3>2022 </br> film </br> with ...</h3>
+          <hr>
+          <p>In this project, I tried to make shrimps have babies. In this project, I tried to make shrimps have babies. In this project, I tried to make shrimps have babies. 
+          </p>
+          </div>
+        </div>
+
+        <a href="#horst" style="left:48%; top:23%;" class="ingredient">
+          <img src="images/chicken.png">
+        </a>
+        <div id="horst" class="recipe">
+          <a href="#" class="close">X</a>
+          <div class="content">
+            <img src="images/horst.png">
+
+          <h2>Horst</h2>
+          <hr>
+          <h3>2021 </br> multiple media </br> graduation project</h3>
+          <hr>
+          <p>I created a sextoy for my alter-ego, Horst. Horst is male, mid-forties, right-wing. Years of military service have left him struggling with his identity. He navigates a path between being respected as a man and the pitfalls of toxic masculinity. 
+          </p>
+          <p>The project HORST has different elements to it:</p>
+          <ul>
+            <li> A sex toy (HORST_mychickpic) in the shape of a giant chicken illustrates both his misogynous worldview and his fondness for meat.</li>
+            <li>An abstracted <a href="https://youtu.be/RYRGXWpjqqw" target="_blank">mash-up</a> (HORST_becamegif) of five blockbuster films convey the narcissistic personality of the tough hero.</li>
+            <li>A corset (HORST_corsetpic) alludes to his insecurity about his body and the six-pack he lacks.</li>
+            <li>In a modified version of the first-person shooter game (HORST_gamepic) UltimateDOOM, one can shoot the enemeies in form of the chicken.</li>
+          </ul>
+          <p>Grim and absurd in equal measure, ‘Horst’ makes us realize just how difficult it is to be a man in a world of media clichés and shifting gender identities.</p>
+          <hr>
+          <p>The project was developed during my final semester at Design Academy Eindhoven. The Doom game was commissioned by Museum of the Future Enschede.</p>
+          </div>
+        </div>
+
+        <a href="#pigeon" style="left:58%; top:64%;" class="ingredient">
+          <img src="images/pigeon.png">
+        </a>
+        <div id="pigeon" class="recipe">
+          <a href="#" class="close">X</a>
+          <h2>pigeon poo power</h2>
+          <img src="images/pigeon.png">
+          <hr>
+          <h3>2022 </br> film </br> with ...</h3>
+          <hr>
+          <p>In this project, I tried to make shrimps have babies. In this project, I tried to make shrimps have babies. In this project, I tried to make shrimps have babies. 
+          </p>
+          <p></p>
+        </div>
+
+      </div>
+
+      <div id="psyche" class="fam">
+
+        <img class="letters" src="images/psyche.png" style="left: 52%; top: 71%;" alt=""/>
+        <img class="letters" src="images/shadows.png" style="left: 32%; top: 65%;" alt=""/>
+        <img class="letters" src="images/ghosts.png" style="left: 58%; top: 26%;" alt=""/>
+
+        <a href="#wool" style="left:44%; top:44%;" class="ingredient">
+          <img src="images/wool.png">
+        </a>
+        <div id="wool" class="recipe">
+          <a href="#" class="close">X</a>
+          <h2>Show me love</h2>
+          <img src="images/wool.png">
+          <hr>
+          <h3>2022 </br> film </br> with ...</h3>
+          <hr>
+          <p>In this project, I tried to make shrimps have babies. In this project, I tried to make shrimps have babies. In this project, I tried to make shrimps have babies. 
+          </p>
+        </div>
+
+        <a href="#well" style="left:15%; top: 45%;" class="ingredient">
+          <img src="images/well.png">
+        </a>
+        <div id="well" class="recipe">
+          <a href="#" class="close">X</a>
+          <h2>fan fiction wishing well</h2>
+          <img src="images/well.png">
+          <hr>
+          <h3>2022 </br> film </br> with ...</h3>
+          <hr>
+          <p>In this project, I tried to make shrimps have babies. In this project, I tried to make shrimps have babies. In this project, I tried to make shrimps have babies. 
+          </p>
+        </div>
+
+        <a href="#couch" style="left:61%; top:48%;" class="ingredient">
+          <img src="images/couch.png">
+        </a>
+        <div id="couch" class="recipe">
+          <a href="#" class="close">X</a>
+          <h2>Psyche AI</h2>
+          <img src="images/couch.png">
+          <hr>
+          <h3>2022 </br> film </br> with ...</h3>
+          <hr>
+          <p>In this project, I tried to make shrimps have babies. In this project, I tried to make shrimps have babies. In this project, I tried to make shrimps have babies. 
+          </p>
+        </div>
+
+      </div>
+    </div>
+
+
+  <img src="images/sarahshrimpshot.png" style="width: 200px; position: fixed; left: 10px; bottom: 20px;">
+  <img class="hovericon" src="images/sarahshrimpwiggle.png" style="width: 200px; position: fixed; left: 10px; bottom: 20px;">
+
+  <div class="subtitles">
+    <h2 class="sentence">Scoop out a project you want to get to know</h2>
+    <h2 class="sentence">Or click me to get in touch</h2>
+  </div>
+  
+  <footer>
+    <p>this site was cooked in 2023 with <a href="https://www.supergijs.com">supergijs</a></p>
+  </footer>
+
+  </div>
+
+
+  <!-- <script>
+    const draggableElement = document.getElementById('draggable');
+
+let isDragging = false;
+let offsetX, offsetY;
+
+draggableElement.addEventListener('mousedown', (e) => {
+    isDragging = true;
+    offsetX = e.clientX - draggableElement.getBoundingClientRect().left;
+    offsetY = e.clientY - draggableElement.getBoundingClientRect().top;
+    draggableElement.style.cursor = 'grabbing';
+});
+
+document.addEventListener('mousemove', (e) => {
+    if (!isDragging) return;
+
+    const newX = e.clientX - offsetX;
+    const newY = e.clientY - offsetY;
+
+    draggableElement.style.left = newX + 'px';
+    draggableElement.style.top = newY + 'px';
+});
+
+document.addEventListener('mouseup', () => {
+    isDragging = false;
+    draggableElement.style.cursor = 'grab';
+});
+  </script> -->
+
+</body>
+</html>

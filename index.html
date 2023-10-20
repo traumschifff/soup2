@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Sarah's site</title>
+  <meta name="description" content="">
+  <meta name="author" content="Sarah Fitterer">
+
+  <meta property="og:title" content="Sarah's soup">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="">
+  <meta property="og:description" content="">
+  <meta property="og:image" content="">
+
+  <link rel="icon" type="image/x-icon" href="images/tinysoup.ico">
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    /* Reset some default styles */
+    body, html {
+        margin: 0;
+        padding: 0;
+    }
+
+    /* Center the landing page content */
+    #ground {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        /* height: 100vh; */
+        overflow: auto; /* Hide overflow from background image */
+    }
+
+    /* Style the background image */
+    .background {
+        position: relative;
+        /* overflow: auto;
+        width: 100%;
+        height: 100vh; */
+    }
+
+    #back {
+        /* width: auto; */
+        /* min-height: 100vh; */
+        /* position: absolute; */
+        /* top: 50%;
+        left: 50%; */
+        /* transform: translate(-50%, -50%); */
+        z-index: -1;
+    }
+
+    /* Style the hoverable PNG */
+    .hoverable {
+        position: absolute;
+        top: 32.7%;
+        left: 43.3%;
+        cursor: url("images/spoonright.png"), zoom-in;
+        /* transform: translate( -50%, -50%); */
+        z-index: 1; /* Place it above the background image */
+    }
+
+    .hoverable img {
+        /* width: 495px;
+        height: 455px; */
+        position: relative;
+        /* transition: transform 0.5s ease; Add a smooth hover effect */
+        z-index: 2;
+        -webkit-filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.6));
+	      filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.6));
+    }
+
+    /* Add a hover effect to the hoverable PNG */
+    .hoverable:hover img {
+        transform: translate(-80%, -60%) scale(1);
+        /* opacity: 0.8; Scale it up on hover */
+        /* display: none; */
+    }
+
+    .hoverable a {
+      cursor: zoom-in;
+      position: absolute;
+      margin: 200px;
+      z-index: 1;
+    }
+
+    button{
+      font-size: 2em;
+      cursor: url("images/spoonright.png"), zoom-in;
+    }
+
+/* Create a CSS animation to toggle sentences */
+@keyframes toggleSentences {
+    0%, 25% {
+        opacity: 0;
+    }
+    26%, 49% {
+        opacity: 1;
+    }
+    50%, 100% {
+        opacity: 0;
+    }
+}
+
+.sentence:nth-child(1) {
+    animation: toggleSentences 32s steps(1, end) infinite;
+    animation-delay: 0s;
+}
+
+.sentence:nth-child(2) {
+    animation: toggleSentences 32s steps(1, end) infinite;
+    animation-delay: 8s; /* Delay the start of the second sentence by 3 seconds */
+}
+
+.sentence:nth-child(3) {
+    animation: toggleSentences 32s steps(1, end) infinite;
+    animation-delay: 16s; /* Delay the start of the third sentence by 6 seconds */
+}
+.sentence:nth-child(4) {
+    animation: toggleSentences 32s steps(1, end) infinite;
+    animation-delay: 24s; /* Delay the start of the third sentence by 6 seconds */
+}
+
+  </style>
+
+</head>
+
+<body>
+  <div id="ground">
+    <div class="title">
+      <a href="/soup.html"><h1>Fittererr</h1></a>
+      <h2 class="subtitle">Research and concepts</h2>
+   </div>
+      
+    <div class="subtitles">
+      <h2 class="sentence"> Hi you I'm Sarah welcome inside my head</h2>
+      <h2 class="sentence"> well you will have to dive in first</h2>
+      <h2 class="sentence"> or just stay here.</h2>
+      <h2 class="sentence"> did you know early life once started in a muddy glacier puddle?</h2>
+      </div>
+
+    <div class="background">
+    <img id="back" src="images/backmountain.png"/>
+      
+      <div class="hoverable">
+        <a href="soup.html"><button>enter</button></a>
+        <img src="images/headcovernew.png"/>
+
+      </div>
+  
+    </div>
+  </div>
+
+
+
+</body>
+</html>

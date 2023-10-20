@@ -1,0 +1,115 @@
+* {
+	box-sizing: border-box;
+	/* --bg-color:rgb(42, 59, 42); */
+	--bg-color:rgb(174, 181, 168);
+	--menucolor: rgb(236, 244, 225);
+	--text-color: rgb(28, 36, 28);
+}
+html, body {
+	/* height: 100%; */
+  	margin: 0;
+	-webkit-font-smoothing: antialiased;    
+}
+
+body{
+
+}
+
+#ground {
+    /* position: absolute;
+    z-index: 0; */
+    /* align-self: center; */
+    /* height: auto;
+    width: auto; */
+    /* background: url(images/zoomsoup.gif) no-repeat center;
+    background-size: cover; */
+    /* margin-left: -50%;
+    margin-top: -50%; */
+	/* font-size: calc(12px + 6 * ((100vw - 300px) / (1600 - 300))); */
+}
+
+.icon {
+    position:fixed;
+}
+
+.subtitles{
+    /* position: fixed;
+    bottom: 40px;
+    width: 80vw;
+    font: Arial Bold 1.5em; */
+}
+
+.title{
+    position: fixed;
+    left:20px;
+    top:20px;  
+    text-align: center;
+    z-index: 5;
+    font-size: 1.2em;
+    filter: drop-shadow(0px 0px 0.8em white);
+}
+
+.title a{
+    text-decoration: none;
+}
+
+.title h1{
+    font-family: Arial Bold, sans-serif;
+    text-transform: uppercase;
+    font-size: 3em;
+    letter-spacing: -0.03em;
+    color: yellow;
+    z-index: 1;
+    margin: 0;
+
+    /* filter: drop-shadow(0px 0px 20px YELLOW); */
+    -webkit-text-stroke: 0.04em black;
+}
+
+.title:hover {
+    filter: drop-shadow(0px 0px 1em YELLOW);
+}
+
+.subtitle{
+    font-family: Arial Narrow Bold, Arial Impact, sans-serif sans-serif;
+    /* -webkit-text-stroke: 1px white; */
+    letter-spacing: -0.05em;
+    font-style: italic;
+    margin: 0;
+    margin-top: -10px;
+    font-size: 1.5em;
+}
+
+.subtitles {
+    position: fixed;
+    left: 5vw;
+    bottom: 20px;
+    height: 200px;
+    z-index: 1;
+    color: yellow;
+    font-family: Arial Bold, Arial;
+    font-style: italic;
+    letter-spacing: -0.04em;
+    -webkit-text-stroke-color: black;
+    -webkit-text-stroke-width: 0.04em; 
+    filter: drop-shadow(0 0 1em rgba(0,0,0,0.2));
+    text-align: center;
+    /* text-align: -webkit-center; */
+    font-size: 3em;
+}
+
+/* Hide all sentences by default */
+.sentence {
+    width: 90vw;
+    /* max-width: 90vw; */
+    opacity: 0;
+    position: absolute;
+    bottom: 0;
+    /* bottom: 20px; */
+    /* transition: opacity 1s ease-in-out; */
+}
+
+/* Show the first sentence */
+.sentence:first-child {
+    opacity: 1;
+}
