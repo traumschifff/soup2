@@ -21,318 +21,7 @@
   <link rel="stylesheet" href="style.css">
  
   <style>
-    @keyframes wiggle {
-	  0%   {margin: 0; transform: rotate(0deg);}
-		50%  {margin: -10px 15px; transform: rotate(-16deg);}
-	  100% {margin: 13px 11px;transform: rotate(15deg);}
-		}
-
-    .ground{
-      position: fixed;
-      background: black;
-      background: url(images/soupbackzoom.jpg) no-repeat center;
-      background-size: cover;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      width: 100vw;
-    }
-
-    #about{
-      position: fixed;
-      top: 0px;
-      right: 0px;
-      height: 20vh;
-      z-index: 3;
-      /* transform: translate(0, 50%); */
-    }
-
-    .bio{
-      position: fixed;
-      top: 40px;
-      right: 20px;
-      width: 380px;
-      padding: 40px 20px;
-      /* cursor: grab; */
-      z-index: 3;
-      border-radius: 30px;
-      color: whitesmoke;
-    }
-
-    .bio details{
-      margin:0;
-      padding:0;
-      font-size: 1.6em;
-
-
-    }
-
-    .bio .biotext{
-      max-height: 80vh;
-      padding: 30px 0;
-      overflow-y: scroll;
-      -webkit-mask-image:linear-gradient(transparent 5%, #000 10%, #000 95%, transparent 100%);
-    }
-
-    .bio h2{
-      font-weight: normal;
-    }
-    .bio a{
-      color: white;
-      text-decoration: none;
-    }
-    .bio a:hover{
-      text-decoration: underline;
-    }
-    .bio summary{
-      /* font-weight: bold;
-      font-style: italic; */
-      font-size: 1.2em;
-      position:fixed;
-      top: 40px;
-    }
-
-    .bio summary:hover{
-      color: coral;
-      /* cursor:zoom-in; */
-    }
-
-    .soup{
-      position: absolute;
-      height: 100vh;
-      max-height: 100vw;
-      width: 100vw;
-      max-width: 100vh;
-      cursor: url("images/spoonright.png"), zoom-in;
-      /* border-radius: 45vh; */
-      /* border: 10px lightblue solid; */
-      /* -webkit-filter: drop-shadow(2px 2px 6px rgba(0, 0, 0, 0.6));
-	    filter: drop-shadow(2px 2px 6px rgba(0, 0, 0, 0.6)); */
-    }
-
-    .letters:hover {
-      height: 16vh;
-      -webkit-filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.6));
-	    filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.6));
-    }
-
-    .letters{
-      font-family: arial, 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-      text-transform: uppercase;
-      letter-spacing: 0.2em;
-      color: antiquewhite;
-      position: absolute;
-      height: 15vh;
-      -webkit-filter: drop-shadow(10px whitesmoke);
-      filter: drop-shadow(10px whitesmoke);
-      transition: 2s ease;
-    }
-
-    /* .letters:hover{
-      animation: wiggle 8s;
-    } */
-
-    .fam:hover .letters{
-      animation: wiggle 8s;
-    }
   
-
-    .ingredient{
-      position: absolute;
-      /* display: block; */
-      height: 90px;
-      margin-top: 20px;
-      /* transform: translate(-50%,-50%); */
-      animation: wiggle 10s infinite alternate;
-      overflow: hidden;
-      transition: 0.5s ease;
-    }
-    .ingredient img{
-      width: 15vh;
-      margin-top:30px;
-      transition: 0.5s ease;
-      /* transform: translate(-50%,-50%); */
-      cursor: url("images/spoonright.png"), zoom-in;
-
-    }
-
-    .ingredient:hover{
-      /* height: 100px; */
-      margin-top: 0px;
-      -webkit-filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.6));
-	    filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.6));
-    }
-
-    .letters:hover ~ .ingredient img{
-      margin-top: 0px;
-    }
-
-    .ingredient:hover img{
-      margin-top:0px;
-    }
-
-    .recipe{
-      visibility: hidden;
-      opacity: 0;
-      background: url(images/soupbackzoom.jpg) no-repeat center;
-      background-size: cover;
-      /* background-color: gold;
-      border: 5px solid black; */
-      position: fixed;
-      right: 0;
-      top: 0;
-      width: 100vw;
-      height: 100vh;
-      /* display: flex;
-      justify-content: center;
-      align-items: center; */
-      padding: 0 20vw;
-      /* overflow-y: scroll; */
-      transition: all 0.1s;
-      z-index: 2;
-      font-size: 2em;
-      /* pointer-events: none; */
-      color: whitesmoke;
-      /* -webkit-mask-image: radial-gradient(#000 60%, transparent 85%); */
-    }
-
-    .recipe:target {
-      visibility: visible;
-      opacity: 1;
-      pointer-events: auto;
-    }
-
-    .recipe:target ~ .ingredient img{
-      margin-top: 80px;
-    }
-    .recipe:target ~ .letters{
-      height: 5vh;
-    }
-    .recipe .close{
-      position: fixed;
-      height: 100%;
-      width: 100%;
-      z-index: 1;
-      top: 0;
-      left: 0;
-      cursor: url("images/spoonright.png"), zoom-in;
-    }
-
-    .recipe .content{
-      width: 60%;
-      /* max-width: 80vh; */
-      height: 100vh;
-      /* margin: auto; */
-      position: absolute;
-      z-index: 2;
-      overflow: scroll;
-      -webkit-mask-image: radial-gradient(#000 60%, transparent 85%);
-      padding: 100px 0 300px 0;
-      cursor: crosshair;
-    }
-    .recipe h2{
-      text-transform: uppercase;
-      font-weight: lighter;
-      text-align: center;
-    }
-
-    .recipe h3 {
-      text-align: center;
-      font-weight: normal;
-      letter-spacing: 0.05em;
-    }
-    .recipe marquee h3{
-    /* match subtitle styling */
-      font-family: Arial Bold Italic, sans-serif;
-      text-transform: uppercase;
-      letter-spacing: -0.03em;
-      color: yellow;
-      -webkit-text-stroke: 0.04em black;
-    }
-    .recipe a.link{
-      color: inherit;
-      text-decoration: underline;
-    }
-    .recipe img{
-      width: 50%;
-      display: block;
-      margin: auto;
-    }
-
-    .recipe .hovertext{
-      text-decoration: none;
-      font-style: italic;
-    }
-    .hovertext:hover ~ .hoverimage, .hoverimage:hover{
-      color:coral;
-      display: block;
-    }
-    .recipe .hoverimage{
-      display: none;
-      position: absolute;
-      /* margin-top:0; */
-      transform: translate(-50%,-112%);
-      left: 50%;
-    }
-    /* .hoverimage:hover{
-      display:block;
-    } */
-
-    .hovericon{
-      visibility: hidden;
-    }
-    .hovericon:hover{
-      visibility: visible;
-    }
-
-
-    img:hover + img{
-      visibility:visible;
-    }
-    
-    img.icon:hover{
-      visibility: hidden;
-    }
-
-    footer{
-      position: fixed;
-      bottom: 0px;
-      right: 20px
-    }
-    footer p{
-      color: whitesmoke;
-      text-align: left;
-      filter: drop-shadow(1px 1px 5px black);
-    }
-    footer a{
-      color: inherit;
-      /* text-decoration; */
-    }
-
-        /* Create a CSS animation to toggle sentences */
-    @keyframes toggleSentences {
-        0%, 45% {
-            opacity: 1;
-        }
-        50%, 100% {
-            opacity: 0;
-        }
-    }
-
-    .sentence{
-      font-size: 0.8em;
-    }
-
-    .sentence:nth-child(1) {
-        animation: toggleSentences 16s steps(1, end) infinite;
-        animation-delay: 0s;
-    }
-
-    .sentence:nth-child(2) {
-        animation: toggleSentences 16s steps(1, end) infinite;
-        animation-delay: 8s;
-    }
   </style>
 
 </head>
@@ -393,34 +82,60 @@
           </div>
         </div>
 
+<!-- HORST -->
         <a href="#horst" style="left:48%; top:23%;" class="ingredient">
           <img src="images/chicken.png">
         </a>
         <div id="horst" class="recipe">
           <a href="#" class="close"></a>
           <div class="content">
+            <marquee behavior="" direction="" scrollamount="4"><h3>2021 • multiple media • graduation project</h3></marquee>
             <img src="images/horst/horst.jpg">
-
-          <h2>Horst</h2>
-          <hr>
-          <marquee behavior="" direction="" scrollamount="4"><h3>2021 • multiple media • graduation project</h3></marquee>
-          <h3>2021 • multiple media • graduation project</h3>
-          <hr>
-          <p>I created a sextoy for my alter-ego, Horst. Horst is male, mid-forties, right-wing. Years of military service have left him struggling with his identity. He navigates a path between being respected as a man and the pitfalls of toxic masculinity. 
-          </p>
-          <p>The project HORST has different elements to it:</p>
-          <ul>
-            <li> A <a class="hovertext">sex toy</a><img class="hoverimage" src="images/horst/chicken.png" alt=""> in the shape of a giant chicken illustrates both his misogynous worldview and his fondness for meat.</li>
-            <li>An abstracted <a class="hovertext link" href="https://youtu.be/RYRGXWpjqqw" target="_blank">mash-up</a><img class="hoverimage" src="images/horst/wienpic.jpg" alt=""> of five blockbuster films convey the narcissistic personality of the tough hero.</li>
-            <li>A <a class="hovertext">corset</a><img class="hoverimage" src="images/horst/corset.png" alt=""> alludes to his insecurity about his body and the six-pack he lacks.</li>
-            <li>In a modified version of the first-person <a class="hovertext">shooter game</a><img class="hoverimage" src="images/horst/game.png" alt=""> UltimateDOOM, one can shoot the enemeies in form of the chicken.</li>
-          </ul>
-          <p>Grim and absurd in equal measure, ‘Horst’ makes us realize just how difficult it is to be a man in a world of media clichés and shifting gender identities.</p>
-          <hr>
-          <p>The project was developed during my final semester at Design Academy Eindhoven. The Doom game was commissioned by Museum of the Future Enschede.</p>
+            <h2>Horst</h2>
+            <hr>
+            <p>I created a sextoy for my alter-ego, Horst. Horst is male, mid-forties, right-wing. Years of military service have left him struggling with his identity. He navigates a path between being respected as a man and the pitfalls of toxic masculinity. 
+            </p>
+                <p>The project HORST has different elements to it:</p>
+            <ul>
+              <li> A <a class="hovertext">sex toy</a><img class="hoverimage" src="images/horst/chicken.png" alt=""> in the shape of a giant chicken illustrates both his misogynous worldview and his fondness for meat.</li>
+              <li>An abstracted <a class="hovertext link" href="https://youtu.be/RYRGXWpjqqw" target="_blank">mash-up</a><img class="hoverimage" src="images/horst/wienpic.jpg" alt=""> of five blockbuster films convey the narcissistic personality of the tough hero.</li>
+              <li>A <a class="hovertext">corset</a><img class="hoverimage" src="images/horst/corset.png" alt=""> alludes to his insecurity about his body and the six-pack he lacks.</li>
+              <li>In a modified version of the first-person <a class="hovertext">shooter game</a><img class="hoverimage" src="images/horst/game.png" alt=""> UltimateDOOM, one can shoot the enemeies in form of the chicken.</li>
+            </ul>
+            <p>Grim and absurd in equal measure, ‘Horst’ makes us realize just how difficult it is to be a man in a world of media clichés and shifting gender identities.</p>
+            <hr>
+            <p>The project was developed during my final semester at Design Academy Eindhoven. The Doom game was commissioned by Museum of the Future Enschede.</p>
+            <hr>
+            <h3>Featured at</h3>
+            <ul>
+              <li><a class="hovertext">Graduation Show</a><img class="hoverimage" src="images/horst/chicken.png" alt="">, Beursgebouw Eindhoven (2021)</li>
+              <li><a class="hovertext">Museum of the Future</a><img class="hoverimage" src="images/horst/motfpic.jpg" alt="">, Beursgebouw Eindhoven (2022)</li>
+              <li><a class="hovertext">Tec Art</a><img class="hoverimage" src="images/horst/tecart.jpg" alt="">, Worm Rotterdam (2022)</li>
+              <li><a class="hovertext">Graduation Show</a><img class="hoverimage" src="images/horst/chicken.png" alt="">, Beursgebouw Eindhoven (2021)</li>
+              <li><a class="hovertext">Graduation Show</a><img class="hoverimage" src="images/horst/chicken.png" alt="">, Beursgebouw Eindhoven (2021)</li>
+              <li><a class="hovertext">Graduation Show</a><img class="hoverimage" src="images/horst/chicken.png" alt="">, Beursgebouw Eindhoven (2021)</li>
+              <li>Museum of the Future, Enschede (2022)</li>
+            </ul>
+            <hr>
+            <h3>Additional content</h3>
+            <ul>
+              <li><a class="hovertext">Artist Talk</a><img class="hoverimage" src="images/horst/chicken.png" alt="">, ArtBlab London (2022)</li>
+              <li><a href="https://www.temamagazine.com/normality-6/30planks" target="_blank" class="hovertext link">Video Essay</a><img class="hoverimage" src="images/horst/motfpic.jpg" alt="">, TEMA Magazine (2022)</li>
+              <li><a class="hovertext">Horst fucks Mychick</a><img class="hoverimage" src="images/horst/tecart.jpg" alt="">, VideoClub Berlin (2022)</li>
+            </ul>
+            <hr>
+            <h3>Press</h3>
+            <ul>
+              <li><a class="hovertext link">Turbantia</a>, "Enschede heeft eindelijk...", 02/04/22</li>
+              <li><a class="hovertext link">RTL4 Jinek</a>, Afl. 39, 21.10.21</li> 
+              <li><a class="hovertext link">Studio 040</a>, "Boedereij inspireert (...)", 19.10.21</li>
+              <li><a class="hovertext link">Trend Stefan</a>, "New Mythology (...)", 18.10.21</li>
+              <li><a class="hovertext link">De Wilde Boerin</a>, "Geplukte kip of sextoy?", 16.11.21</li>
+            </ul>
           </div>
         </div>
 
+<!-- PIGEON POO -->
         <a href="#pigeon" style="left:58%; top:64%;" class="ingredient">
           <img src="images/pigeon.png">
         </a>
@@ -437,6 +152,8 @@
         </div>
 
       </div>
+
+<!-- psycho of AI -->
 
       <div id="psyche" class="fam">
 
@@ -490,7 +207,7 @@
     </div>
 
 
-  <img src="images/sarahshrimpshot.png" style="width: 200px; position: fixed; left: 10px; bottom: 20px;">
+  <a href="index.html"><img src="images/sarahshrimpshot.png" style="width: 200px; z-index: 2; position: fixed; left: 10px; bottom: 20px;"></a>
   <img class="hovericon" src="images/sarahshrimpwiggle.png" style="width: 200px; position: fixed; left: 10px; bottom: 20px;">
 
   <div class="subtitles">
