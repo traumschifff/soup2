@@ -196,6 +196,7 @@ body{
     -webkit-filter: drop-shadow(10px whitesmoke);
     filter: drop-shadow(10px whitesmoke);
     transition: 2s ease;
+    /* transform: translate(-50%,-50%); */
   }
 
   /* .letters:hover{
