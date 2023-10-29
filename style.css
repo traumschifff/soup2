@@ -81,7 +81,6 @@ body{
     opacity: 0;
     position: absolute;
     bottom: 0;
-    /* bottom: 20px; */
     /* transition: opacity 1s ease-in-out; */
 }
 
@@ -180,11 +179,7 @@ body{
       filter: drop-shadow(2px 2px 6px rgba(0, 0, 0, 0.6)); */
   }
 
-  .letters:hover {
-    height: 16vh;
-    -webkit-filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.6));
-      filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.6));
-  }
+
 
   .letters{
     font-family: arial, 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
@@ -192,11 +187,17 @@ body{
     letter-spacing: 0.2em;
     color: antiquewhite;
     position: absolute;
-    height: 15vh;
+    height: 5vh;
     -webkit-filter: drop-shadow(10px whitesmoke);
     filter: drop-shadow(10px whitesmoke);
-    transition: 2s ease;
+    transition: 0.2s ease;
     /* transform: translate(-50%,-50%); */
+  }
+
+  .letters:hover {
+    height: 7vh;
+    -webkit-filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.6));
+      filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.6));
   }
 
   /* .letters:hover{
@@ -204,15 +205,17 @@ body{
   } */
 
   .fam:hover .letters{
-    animation: wiggle 8s;
+    /* animation: wiggle 8s; */
+    -webkit-filter: drop-shadow(2px 2px 10px rgba(255, 255, 255, 0.6));
+    filter: drop-shadow(2px 2px 10px rgba(255, 255, 255, 0.6));
   }
 
 
   .ingredient{
     position: absolute;
     /* display: block; */
-    height: 90px;
-    margin-top: 20px;
+    height: 13vh;
+    /* margin-top: 7vh; */
     /* transform: translate(-50%,-50%); */
     animation: wiggle 10s infinite alternate;
     overflow: hidden;
@@ -220,11 +223,10 @@ body{
   }
   .ingredient img{
     width: 15vh;
-    margin-top:30px;
+    margin-top: 5vh;
     transition: 0.5s ease;
     /* transform: translate(-50%,-50%); */
     cursor: url("images/spoonright.png"), zoom-in;
-
   }
 
   .ingredient:hover{
@@ -236,10 +238,12 @@ body{
 
   .letters:hover ~ .ingredient img{
     margin-top: 0px;
+    -webkit-filter: drop-shadow(2px 2px 7px rgba(255, 253, 108, 0.6));
+    filter: drop-shadow(2px 2px 7px rgba(255, 253, 108, 0.6));
   }
 
   .ingredient:hover img{
-    margin-top:0px;
+    margin-top: 0px;
   }
 
   .recipe{
@@ -247,22 +251,14 @@ body{
     opacity: 0;
     background: url(images/soupbackzoom.jpg) no-repeat center;
     background-size: cover;
-    /* background-color: gold;
-    border: 5px solid black; */
     position: fixed;
     right: 0;
     top: 0;
     width: 100vw;
     height: 100vh;
-    /* display: flex;
-    justify-content: center;
-    align-items: center; */
-    /* padding: 0 20vw; */
-    /* overflow-y: scroll; */
     transition: all 0.1s;
     z-index: 2;
     font-size: 2em;
-    /* pointer-events: none; */
     color: whitesmoke;
     /* -webkit-mask-image: radial-gradient(#000 60%, transparent 85%); */
   }
