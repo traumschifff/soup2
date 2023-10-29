@@ -191,12 +191,15 @@ body{
     filter: drop-shadow(10px whitesmoke);
     transition: 0.2s ease;
     /* transform: translate(-50%,-50%); */
+    cursor: url("images/spoonrightfull.png");
   }
 
   .letters:hover {
     height: 7vh;
     -webkit-filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.6));
       filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.6));
+      cursor: url("images/spoonrightfull.png");
+
   }
 
   /* .letters:hover{
