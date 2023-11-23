@@ -25,6 +25,15 @@ body{
     filter: drop-shadow(0px 0px 0.8em white);
 }
 
+@media only screen and (max-width:800px) {
+  .title{
+    font-size: 1em;}
+
+  .sentence{
+    font-size: 1.2em;
+  }
+}
+
 .title a{
     text-decoration: none;
 }
@@ -61,7 +70,7 @@ body{
     left: 5vw;
     bottom: 20px;
     height: 200px;
-    z-index: 1;
+    z-index: 3;
     color: yellow;
     font-family: Arial Bold, Arial;
     font-style: italic;
@@ -71,7 +80,7 @@ body{
     filter: drop-shadow(0 0 1em rgba(0,0,0,0.2));
     text-align: center;
     /* text-align: -webkit-center; */
-    font-size: 3em;
+    font-size: 1.5em;
 }
 
 /* Hide all sentences by default */
@@ -128,7 +137,7 @@ body{
     color: whitesmoke;
   }
 
-  .bio details{
+  .bio + details{
     margin:0;
     padding:0;
     font-size: 1.6em;
@@ -152,12 +161,34 @@ body{
   .bio a:hover{
     text-decoration: underline;
   }
-  .bio summary{
+
+  .bio marquee{
+    color: yellow;
+    font-style: italic;
+    text-transform: uppercase;
+  }
+  .about summary.button{
     /* font-weight: bold;
     font-style: italic; */
+    text-align: right;
     font-size: 1.2em;
+    font-family: 'Arial Bold', sans-serif;
+    letter-spacing: -0.03em;
+    color: yellow;
+    -webkit-text-stroke: 0.04em black;
     position:fixed;
     top: 40px;
+    width: 340px;
+    list-style: none;
+    cursor: zoom-in;
+    filter: drop-shadow(0px 0px 0.8em white);
+  }
+
+  .about summary.button::-webkit-details-marker{ display:none; }
+
+  .about details[open] summary.button{
+    color: yellow;
+    -webkit-text-stroke: 0.04em black;
   }
 
   .bio summary:hover{
@@ -198,7 +229,7 @@ body{
     height: 7vh;
     -webkit-filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.6));
       filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.6));
-      cursor: url("images/spoonrightfull.png"), zoom-in;
+      cursor: url("images/spoonright.png"), zoom-in;
 
   }
 
@@ -212,7 +243,6 @@ body{
     filter: drop-shadow(2px 2px 10px rgba(255, 255, 255, 0.6));
   }
 
-
   .ingredient{
     position: absolute;
     /* display: block; */
@@ -220,7 +250,8 @@ body{
     /* margin-top: 7vh; */
     /* transform: translate(-50%,-50%); */
     animation: wiggle 10s infinite alternate;
-    overflow: hidden;
+    /* overflow: hidden; */
+    -webkit-mask-image: linear-gradient(#000 85%, transparent 100%);
     transition: 0.5s ease;
   }
   .ingredient img{
@@ -228,7 +259,7 @@ body{
     margin-top: 5vh;
     transition: 0.5s ease;
     /* transform: translate(-50%,-50%); */
-    cursor: url("images/spoonright.png"), zoom-in;
+    cursor: url("images/spoonrightfull.png"), zoom-in;
   }
 
   .ingredient:hover{
@@ -371,6 +402,7 @@ body{
   }
   footer p{
     color: whitesmoke;
+    font-size: 0.8em;
     text-align: left;
     filter: drop-shadow(1px 1px 5px black);
   }
@@ -387,10 +419,6 @@ body{
       50%, 100% {
           opacity: 0;
       }
-  }
-
-  .sentence{
-    font-size: 0.8em;
   }
 
   .sentence:nth-child(1) {
