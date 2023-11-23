@@ -9,11 +9,17 @@ sarah:
 
 website fixes:
 
-make icons float a bit higher or with fade
-make it so that the well comes out completely
-adjust about font to fittererr?
-adjust to mobile view
-bottom of project page- white bar. 
-make circle a bit bigger?
-keep spoon on project page but leave it full (?)
-welcome page: more zoomed-out view
+[] make icons float a bit higher or with fade
+[] make it so that the well comes out completely
+[] adjust about font to fittererr? delete shrimp. 
+[] email me > copy to clipboard
+[] work IRL > dropdown / marquee. "Shrimp Love at Beijing International Film Festival Feb 20"
+[] friends i like to work with, Noam Youngrek Son (queer publisher), Miles Worner (folk-lover), Annelène von Lücken (poetic eye), 
+[] adjust to mobile view
+        fitterer & subtitle smaller,
+        back to ice smaller
+        about clickable
+[x] bottom of project page- white bar. 
+[] make circle a bit bigger? / project text smaller
+[] keep spoon on project page but leave it full (?) (add a way to go back)
+[] welcome page: more zoomed-out view + high res

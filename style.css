@@ -294,7 +294,7 @@ body{
     margin: auto;
     position: relative;
     z-index: 2;
-    overflow: scroll;
+    overflow-y: scroll;
     -webkit-mask-image: radial-gradient(#000 60%, transparent 85%);
     padding: 100px 0 300px 0;
     cursor: default;
