@@ -1,0 +1,19 @@
+sarah:
+
+[ ] collecting material for the rest of the projects
+        images
+        Text
+[ /] links in the about menu
+[v] subtitles (text suggestions)
+[ ] final icons
+
+website fixes:
+
+make icons float a bit higher or with fade
+make it so that the well comes out completely
+adjust about font to fittererr?
+adjust to mobile view
+bottom of project page- white bar. 
+make circle a bit bigger?
+keep spoon on project page but leave it full (?)
+welcome page: more zoomed-out view
