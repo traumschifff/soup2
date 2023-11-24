@@ -178,7 +178,8 @@ body{
     color: yellow;
     -webkit-text-stroke: 0.04em black;
     position:fixed;
-    top: 40px;
+    top: -55px;
+    right: -20px;
     width: 340px;
     list-style: none;
     cursor: zoom-in;
@@ -193,7 +194,7 @@ body{
   }
 
   .bio summary:hover{
-    color: coral;
+    color: rgb(95, 96, 141);
     /* cursor:zoom-in; */
   }
 
