@@ -68,7 +68,7 @@ body{
 .subtitles {
     position: fixed;
     left: 5vw;
-    bottom: 20px;
+    bottom: 0px;
     height: 200px;
     z-index: 3;
     color: yellow;
@@ -116,6 +116,18 @@ body{
     width: 100vw;
   }
 
+  .bio{
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 380px;
+    padding: 0 20px 0px 20px;
+    /* cursor: grab; */
+    z-index: 3;
+    border-radius: 30px;
+    color: whitesmoke;
+  }
+
   #about{
     position: fixed;
     top: 0px;
@@ -125,30 +137,44 @@ body{
     /* transform: translate(0, 50%); */
   }
 
-  .bio{
-    position: fixed;
-    top: 40px;
-    right: 20px;
-    width: 380px;
-    padding: 40px 20px;
-    /* cursor: grab; */
-    z-index: 3;
-    border-radius: 30px;
-    color: whitesmoke;
-  }
-
   .bio details.about{
     margin:0;
     padding:0;
     font-size: 1.6em;
     filter:drop-shadow(0 0 25px black);
   }
+  .about summary.button{
+    text-align: right;
+    font-size: 1.2em;
+    font-family: 'Arial Bold', sans-serif;
+    letter-spacing: -0.03em;
+    color: yellow;
+    -webkit-text-stroke: 0.04em black;
+    position:fixed;
+    width: 360px;
+    cursor: zoom-in;
+    filter: drop-shadow(0px 0px 0.8em white);
+    z-index: 4;
+  }
+
+  .about summary.button::-webkit-details-marker{ display:none; }
+
+  .about[open] summary.button{
+    color: rgb(95, 96, 141);
+    -webkit-text-stroke: 0.04em black;
+    cursor: zoom-out;
+  }
+
+  .bio summary:hover{
+    color: rgb(95, 96, 141);
+    /* cursor:zoom-in; */
+  }
 
   .bio .biotext{
-    max-height: 80vh;
+    max-height: 90vh;
     padding-bottom: 30px;
     overflow-y: scroll;
-    -webkit-mask-image:linear-gradient(transparent 0%, #000 10%, #000 95%, transparent 100%);
+    -webkit-mask-image:linear-gradient(transparent 0%, #000 10%, #000 90%, transparent 100%);
     filter: drop-shadow(0 0 10px black);
   }
 
@@ -168,36 +194,7 @@ body{
     font-style: italic;
     text-transform: uppercase;
   }
-  .about summary.button{
-    /* font-weight: bold;
-    font-style: italic; */
-    text-align: right;
-    font-size: 1.2em;
-    font-family: 'Arial Bold', sans-serif;
-    letter-spacing: -0.03em;
-    color: yellow;
-    -webkit-text-stroke: 0.04em black;
-    position:fixed;
-    top: -55px;
-    right: -20px;
-    width: 340px;
-    list-style: none;
-    cursor: zoom-in;
-    filter: drop-shadow(0px 0px 0.8em white);
-  }
-
-  .about summary.button::-webkit-details-marker{ display:none; }
-
-  .about details[open] summary.button{
-    color: yellow;
-    -webkit-text-stroke: 0.04em black;
-  }
-
-  .bio summary:hover{
-    color: rgb(95, 96, 141);
-    /* cursor:zoom-in; */
-  }
-
+  
   .soup{
     position: absolute;
     height: 100vh;
