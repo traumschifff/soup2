@@ -141,7 +141,7 @@ a{
     right: 20px;
     width: 380px;
     padding: 0 20px 0px 20px;
-    z-index: 3;
+    z-index: 4;
     border-radius: 30px;
     color: whitesmoke;
   }
@@ -158,8 +158,8 @@ a{
   .bio details.about{
     margin:0;
     padding:0;
-    font-size: 1.6em;
-    filter: drop-shadow(0 0 25px black);
+    font-size: 1.2em;
+    filter: drop-shadow(0 0 20px black);
   }
   .about summary.button{
     text-align: right;
@@ -171,7 +171,7 @@ a{
     position:fixed;
     width: 360px;
     filter: drop-shadow(0px 0px 0.8em white);
-    z-index: 4;
+    z-index: 3;
     cursor: url("images/spoonrightfull.png"), zoom-in;
 
   }
@@ -194,7 +194,7 @@ a{
     padding-bottom: 30px;
     overflow-y: scroll;
     -webkit-mask-image:linear-gradient(transparent 0%, #000 10%, #000 90%, transparent 100%);
-    filter: drop-shadow(0 0 10px black);
+    filter: drop-shadow(0 0 20px black);
   }
 
   .bio h2{
@@ -302,7 +302,7 @@ a{
     height: 100vh;
     transition: all 0.1s;
     z-index: 3;
-    font-size: 2em;
+    font-size: 1.5em;
     color: whitesmoke;
     /* -webkit-mask-image: radial-gradient(#000 60%, transparent 85%); */
   }
