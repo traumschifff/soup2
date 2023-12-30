@@ -60,12 +60,15 @@
     .hoverable {
         position: absolute;
         height: 20vh;
-        width: 25vw;
-        top: 38.7%;
-        left: 43.3%;
+        width: 22vh;
+        top: 42%;
+        left: 50%;
         cursor: url("images/spoonright.png"), zoom-in;
-        /* transform: translate( -50%, -50%); */
+        transform: translate( -50%, -50%);
         z-index: 1; /* Place it above the background image */
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
     .hoverable img {
@@ -89,7 +92,7 @@
     .hoverable a {
       cursor: inherit;
       position: absolute;
-      margin: 8vh;
+      /* margin: 8vh; */
       z-index: 1;
     }
 
@@ -141,7 +144,7 @@
       <h2 class="subtitle">Research and concepts</h2>
    </div>
       
-    <div class="subtitles">
+    <div class="subtitles" style="height: 14vh; -webkit-mask-image: none;">
       <h2 class="sentence"> Hi you! Welcome to my head.</h2>
       <h2 class="sentence"> Please, go ahead and have a look around.</h2>
       <h2 class="sentence"> Just - dig in!</h2>
@@ -155,10 +158,8 @@
     <img id="back" src="images/backmountain.png"/>
       
       <div class="hoverable">
-        <a href="">
-        <h2 style="font-family: Arial Bold Italic, Arial Bold, Arial; font-size: 1em; color: yellow; filter:drop-shadow(1px 1px 4px black);position: absolute; left:-7vw; top:-11vh; width: 20vh; text-align: center; z-index: 3;">Soon this web-soup will be ready to:</h2>
-        <button disabled>enter</button>
-	<!-- </a> -->
+        <h2 style="font-family: Arial Bold Italic, Arial Bold, Arial; font-size: 1em; color: yellow; filter:drop-shadow(1px 1px 4px black);  margin-top:-30vh; width: 40vh; text-align: center; z-index: 3;">Soon this web-soup will be ready to:</h2>
+        <a href=""><button disabled>enter</button></a>
         <!-- <a href="soup.html"><button>enter</button></a>
         <img src="images/headcovernew.png"/> -->
 
