@@ -12,7 +12,13 @@ html, body {
 }
 
 body{
+  cursor: url("images/spoonright.png"), pointer;
+}
 
+a{
+  text-decoration: none;
+  color: inherit;
+  cursor: url("images/spoonrightfull.png"), zoom-in;
 }
 
 .title{
@@ -67,20 +73,30 @@ body{
 
 .subtitles {
     position: fixed;
-    left: 5vw;
+    left: 10vw;
+    width: 80vw;
     bottom: 0px;
-    height: 200px;
-    z-index: 3;
+    height: 100px;
+    z-index: 2;
     color: yellow;
     font-family: Arial Bold, Arial;
     font-style: italic;
     letter-spacing: -0.04em;
     -webkit-text-stroke-color: black;
-    -webkit-text-stroke-width: 0.04em; 
+    -webkit-text-stroke-width: 0.05em; 
     filter: drop-shadow(0 0 1em rgba(0,0,0,0.2));
     text-align: center;
     /* text-align: -webkit-center; */
     font-size: 1.5em;
+    -webkit-mask-image: radial-gradient(#000 50%, transparent 60%);
+}
+
+.subtitles a{
+  /* text-decoration: underline; */
+  /* filter: drop-shadow(0 0 2em rgba(255,255,255,0.2)); */
+  font-style: normal;
+  /* text-transform: uppercase; */
+
 }
 
 /* Hide all sentences by default */
@@ -101,7 +117,7 @@ body{
 @keyframes wiggle {
     0%   {margin: 0; transform: rotate(0deg);}
       50%  {margin: -10px 15px; transform: rotate(-16deg);}
-    100% {margin: 13px 11px;transform: rotate(15deg);}
+    100% {margin: 13px -11px;transform: rotate(15deg);}
       }
 
   .ground{
@@ -122,7 +138,6 @@ body{
     right: 20px;
     width: 380px;
     padding: 0 20px 0px 20px;
-    /* cursor: grab; */
     z-index: 3;
     border-radius: 30px;
     color: whitesmoke;
@@ -141,28 +156,29 @@ body{
     margin:0;
     padding:0;
     font-size: 1.6em;
-    filter:drop-shadow(0 0 25px black);
+    filter: drop-shadow(0 0 25px black);
   }
   .about summary.button{
     text-align: right;
     font-size: 1.2em;
-    font-family: 'Arial Bold', sans-serif;
+    font-family: 'Arial Bold', Arial Bold, sans-serif;
     letter-spacing: -0.03em;
     color: yellow;
     -webkit-text-stroke: 0.04em black;
     position:fixed;
     width: 360px;
-    cursor: zoom-in;
     filter: drop-shadow(0px 0px 0.8em white);
     z-index: 4;
+    cursor: url("images/spoonrightfull.png"), zoom-in;
+
   }
 
-  .about summary.button::-webkit-details-marker{ display:none; }
+  /* .about summary.button::-webkit-details-marker{ display:none; } */
 
   .about[open] summary.button{
     color: rgb(95, 96, 141);
     -webkit-text-stroke: 0.04em black;
-    cursor: zoom-out;
+    cursor: url("images/spoonrightfull.png"), zoom-in;
   }
 
   .bio summary:hover{
@@ -188,12 +204,6 @@ body{
   .bio a:hover{
     text-decoration: underline;
   }
-
-  .bio marquee{
-    color: yellow;
-    font-style: italic;
-    text-transform: uppercase;
-  }
   
   .soup{
     position: absolute;
@@ -201,7 +211,7 @@ body{
     max-height: 100vw;
     width: 100vw;
     max-width: 100vh;
-    cursor: url("images/spoonright.png"), zoom-in;
+    /* cursor: url("images/spoonright.png"), zoom-in; */
     /* border-radius: 45vh; */
     /* border: 10px lightblue solid; */
     /* -webkit-filter: drop-shadow(2px 2px 6px rgba(0, 0, 0, 0.6));
@@ -221,11 +231,11 @@ body{
     filter: drop-shadow(10px whitesmoke);
     transition: 0.2s ease;
     /* transform: translate(-50%,-50%); */
-    cursor: url("images/spoonrightfull.png"), zoom-in;
   }
 
   .letters:hover {
-    height: 7vh;
+    /* height: 7vh; */
+    animation: wiggle 5s alternate infinite;
     -webkit-filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.6));
       filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.6));
       cursor: url("images/spoonright.png"), zoom-in;
@@ -237,7 +247,6 @@ body{
   } */
 
   .fam:hover .letters{
-    /* animation: wiggle 8s; */
     -webkit-filter: drop-shadow(2px 2px 10px rgba(255, 255, 255, 0.6));
     filter: drop-shadow(2px 2px 10px rgba(255, 255, 255, 0.6));
   }
@@ -289,7 +298,7 @@ body{
     width: 100vw;
     height: 100vh;
     transition: all 0.1s;
-    z-index: 2;
+    z-index: 3;
     font-size: 2em;
     color: whitesmoke;
     /* -webkit-mask-image: radial-gradient(#000 60%, transparent 85%); */
@@ -314,7 +323,7 @@ body{
     z-index: 1;
     top: 0;
     left: 0;
-    cursor: url("images/spoonright.png"), zoom-in;
+    cursor: url("images/spoonrightfull.png"), zoom-in;
   }
 
   .recipe .content{
@@ -323,11 +332,11 @@ body{
     height: 100vh;
     margin: auto;
     position: relative;
-    z-index: 2;
+    z-index: 3;
     overflow-y: scroll;
     -webkit-mask-image: radial-gradient(#000 60%, transparent 85%);
     padding: 100px 0 300px 0;
-    cursor: default;
+    /* cursor: default; */
   }
   .recipe h2{
     text-transform: uppercase;
@@ -361,7 +370,8 @@ body{
   .recipe .hovertext{
     text-decoration: none;
     font-style: italic;
-    cursor: crosshair;
+    cursor: url("images/spoonrightfull.png"), zoom-in;
+    
   }
   .hovertext:hover ~ .hoverimage, .hoverimage:hover{
     color:coral;
@@ -380,6 +390,7 @@ body{
 
   .hovericon{
     visibility: hidden;
+    z-index: 5;
   }
   .hovericon:hover{
     visibility: visible;

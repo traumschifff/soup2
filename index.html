@@ -34,7 +34,7 @@
         align-items: center;
         justify-content: center;
         height: 100vh;
-        overflow: scroll; /* Hide overflow from background image */
+        overflow: hidden; /* Hide overflow from background image */
     }
 
     /* Style the background image */
@@ -46,8 +46,9 @@
     }
 
     #back {
-        /* width: auto; */
-        /* min-height: 100vh; */
+      max-height: 120vh;
+      min-width: 100vw;
+        /* min-width: 100vw; */
         /* position: absolute; */
         /* top: 50%;
         left: 50%; */
@@ -58,7 +59,9 @@
     /* Style the hoverable PNG */
     .hoverable {
         position: absolute;
-        top: 32.7%;
+        height: 20vh;
+        width: 25vw;
+        top: 38.7%;
         left: 43.3%;
         cursor: url("images/spoonright.png"), zoom-in;
         /* transform: translate( -50%, -50%); */
@@ -70,9 +73,10 @@
         height: 455px; */
         position: relative;
         /* transition: transform 0.5s ease; Add a smooth hover effect */
-        z-index: 2;
+        z-index: 1;
         -webkit-filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.6));
 	      filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.6));
+        width: 25vh;
     }
 
     /* Add a hover effect to the hoverable PNG */
@@ -83,47 +87,47 @@
     }
 
     .hoverable a {
-      cursor: zoom-in;
+      cursor: inherit;
       position: absolute;
-      margin: 200px;
+      margin: 8vh;
       z-index: 1;
     }
 
     button{
-      font-size: 2em;
+      font-size: 1em;
       cursor: url("images/spoonright.png"), zoom-in;
     }
 
 /* Create a CSS animation to toggle sentences */
 @keyframes toggleSentences {
-    0%, 25% {
+    0%, 10% {
         opacity: 0;
     }
-    26%, 49% {
+    11%, 34% {
         opacity: 1;
     }
-    50%, 100% {
+    36%, 100% {
         opacity: 0;
     }
 }
 
 .sentence:nth-child(1) {
-    animation: toggleSentences 32s steps(1, end) infinite;
+    animation: toggleSentences 24s steps(1, end) infinite;
     animation-delay: 0s;
 }
 
 .sentence:nth-child(2) {
-    animation: toggleSentences 32s steps(1, end) infinite;
-    animation-delay: 8s; /* Delay the start of the second sentence by 3 seconds */
+    animation: toggleSentences 24s steps(1, end) infinite;
+    animation-delay: 6s; /* Delay the start of the second sentence by 3 seconds */
 }
 
 .sentence:nth-child(3) {
-    animation: toggleSentences 32s steps(1, end) infinite;
-    animation-delay: 16s; /* Delay the start of the third sentence by 6 seconds */
+    animation: toggleSentences 24s steps(1, end) infinite;
+    animation-delay: 12s; /* Delay the start of the third sentence by 6 seconds */
 }
 .sentence:nth-child(4) {
-    animation: toggleSentences 32s steps(1, end) infinite;
-    animation-delay: 24s; /* Delay the start of the third sentence by 6 seconds */
+    animation: toggleSentences 24s steps(1, end) infinite;
+    animation-delay: 18s; /* Delay the start of the third sentence by 6 seconds */
 }
 
   </style>
@@ -152,11 +156,11 @@
       
       <div class="hoverable">
         <a href="">
-        <h2 style="font-family: Arial Bold Italic, Arial Bold, Arial; font-size: 2em; color: yellow; filter:drop-shadow(1px 1px 4px black);position: absolute; left:-120px; top:-100px; width: 310px; text-align: center;">Soon this web-soup will be ready to:</h2>
+        <h2 style="font-family: Arial Bold Italic, Arial Bold, Arial; font-size: 1em; color: yellow; filter:drop-shadow(1px 1px 4px black);position: absolute; left:-7vw; top:-11vh; width: 20vh; text-align: center; z-index: 3;">Soon this web-soup will be ready to:</h2>
         <button disabled>enter</button>
 	<!-- </a> -->
         <!-- <a href="soup.html"><button>enter</button></a>
-        <img src="images/headcovernew.png"/>
+        <img src="images/headcovernew.png"/> -->
 
       </div>
   
