@@ -31,35 +31,7 @@ a{
     filter: drop-shadow(0px 0px 0.8em white);
 }
 
-@media only screen and (max-width:800px) {
-  .title{
-    font-size: 0.8em;}
 
-  .sentence{
-    font-size: 1em;
-  }
-  .subtitles h2{
-    font-size: 0.8em;
-  }
-}
-
-@media only screen and (max-width:450px) {
-  .title{
-    font-size: 0.5em;}
-
-  .sentence{
-    font-size: 0.6em;
-  }
-  .subtitles{
-    height: 70px;
-  }
-  .subtitles h2{
-    font-size: 0.6em;
-  }
-  footer{
-    font-size: 0.8em;
-  }
-}
 
 .title a{
     text-decoration: none;
@@ -107,7 +79,7 @@ a{
     filter: drop-shadow(0 0 1em rgba(0,0,0,0.2));
     text-align: center;
     /* text-align: -webkit-center; */
-    font-size: 1.2em;
+    font-size: 1em;
     -webkit-mask-image: radial-gradient(#000 50%, transparent 60%);
 }
 
@@ -116,7 +88,6 @@ a{
   /* font-weight: normal; */
   /* -webkit-text-stroke-width: 0; */
   -webkit-text-stroke-color: black;
-
 }
 
 .subtitles a:hover{
@@ -214,7 +185,7 @@ a{
 
   }
 
-  /* .about summary.button::-webkit-details-marker{ display:none; } */
+  .about summary.button::-webkit-details-marker{ display:none; }
 
   .about[open] summary.button{
     color: rgb(95, 96, 141);
@@ -257,6 +228,7 @@ a{
     max-height: 100vw;
     width: 100vw;
     max-width: 100vh;
+    margin-top:-5vh;
     /* cursor: url("images/spoonright.png"), zoom-in; */
     /* border-radius: 45vh; */
     /* border: 10px lightblue solid; */
@@ -523,6 +495,9 @@ a{
     .title{
       font-size: 0.5em;}
     
+    .ingredient img{
+      width: 12vh;
+    }
 
     .bio details.about{
       font-size: 0.8em;
