@@ -388,9 +388,10 @@ a{
     text-decoration: underline;
   }
   .recipe img{
-    width: 60%;
+    width: 100%;
     display: block;
     margin: auto;
+    margin-bottom: 10px;
   }
 
   .recipe .hovertext{
@@ -399,7 +400,7 @@ a{
     cursor: url("images/spoonrightfull.png"), zoom-in;
     
   }
-  .hovertext:hover ~ .hoverimage, .hoverimage:hover{
+  .hovertext:hover + .hoverimage, .hoverimage:hover{
     color:coral;
     display: block;
   }
@@ -409,6 +410,7 @@ a{
     /* margin-top:0; */
     transform: translate(-50%,-112%);
     left: 50%;
+    width: 60%;
   }
   /* .hoverimage:hover{
     display:block;
