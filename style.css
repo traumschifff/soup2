@@ -33,7 +33,7 @@ a{
 
 @media only screen and (max-width:800px) {
   .title{
-    font-size: 1em;}
+    font-size: 0.8em;}
 
   .sentence{
     font-size: 1em;
@@ -52,7 +52,6 @@ a{
     color: yellow;
     z-index: 1;
     margin: 0;
-
     /* filter: drop-shadow(0px 0px 20px YELLOW); */
     -webkit-text-stroke: 0.04em black;
 }
@@ -62,7 +61,7 @@ a{
 }
 
 .subtitle{
-    font-family: Arial Narrow Bold, Arial Impact, sans-serif sans-serif;
+    font-family: Arial Bold, Arial Impact, sans-serif sans-serif;
     /* -webkit-text-stroke: 1px white; */
     letter-spacing: -0.05em;
     font-style: italic;
@@ -92,13 +91,14 @@ a{
 }
 
 .subtitles a{
-  /* text-decoration: underline; */
-  /* filter: drop-shadow(0 0 2em rgba(255,255,255,0.2)); */
   font-style: normal;
-  /* text-transform: uppercase; */
-
 }
 
+.subtitles a:hover{
+  /* text-decoration: underline; */
+  color: grey;
+  /* filter: drop-shadow(0 0 2em rgba(255,255,255,0.7)); */
+}
 /* Hide all sentences by default */
 .sentence {
     width: 60vw;
