@@ -38,6 +38,27 @@ a{
   .sentence{
     font-size: 1em;
   }
+  .subtitles h2{
+    font-size: 0.8em;
+  }
+}
+
+@media only screen and (max-width:450px) {
+  .title{
+    font-size: 0.5em;}
+
+  .sentence{
+    font-size: 0.6em;
+  }
+  .subtitles{
+    height: 70px;
+  }
+  .subtitles h2{
+    font-size: 0.6em;
+  }
+  footer{
+    font-size: 0.8em;
+  }
 }
 
 .title a{
@@ -86,7 +107,7 @@ a{
     filter: drop-shadow(0 0 1em rgba(0,0,0,0.2));
     text-align: center;
     /* text-align: -webkit-center; */
-    font-size: 1.5em;
+    font-size: 1.2em;
     -webkit-mask-image: radial-gradient(#000 50%, transparent 60%);
 }
 
@@ -112,7 +133,7 @@ a{
     bottom: 0;
     margin-bottom:10px;
     margin-left: 15vw;
-    font-size: 1.2em;
+    font-size: 1.5em;
     /* transition: opacity 1s ease-in-out; */
 }
 
@@ -383,7 +404,8 @@ a{
   }
   .recipe marquee h3{
   /* match subtitle styling */
-    font-family: Arial Bold Italic, sans-serif;
+    font-family: Arial Bold, sans-serif;
+    font-weight: bold;
     text-transform: uppercase;
     letter-spacing: -0.03em;
     color: yellow;
@@ -472,3 +494,53 @@ a{
       animation: toggleSentences 16s steps(1, end) infinite;
       animation-delay: 8s;
   } */
+
+  @media only screen and (max-width:800px) {
+    .title{
+      font-size: 0.8em;}
+  
+    .sentence{
+      font-size: 1em;
+    }
+    .subtitles h2{
+      font-size: 0.8em;
+    }
+    .bio{
+      width: 80vw;
+    }
+    .bio details.about{
+      /* font-size: 1em; */
+    }
+    .about summary.button{
+      width: 75vw;
+    }
+    .bio .biotext{
+      padding-top: 60px;
+    }
+  }
+  
+  @media only screen and (max-width:450px) {
+    .title{
+      font-size: 0.5em;}
+    
+
+    .bio details.about{
+      font-size: 0.8em;
+    }
+    .sentence{
+      font-size: 0.6em;
+    }
+    .subtitles{
+      height: 70px;
+    }
+    .subtitles h2{
+      font-size: 0.6em;
+    }
+    .bio .biotext{
+      padding-top: 40px;
+    }
+
+    footer{
+      font-size: 0.8em;
+    }
+  }
