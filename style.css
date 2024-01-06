@@ -92,6 +92,10 @@ a{
 
 .subtitles a{
   font-style: normal;
+  font-weight: normal;
+  /* -webkit-text-stroke-width: 0; */
+  -webkit-text-stroke-color: black;
+
 }
 
 .subtitles a:hover{
@@ -119,8 +123,20 @@ a{
 
 @keyframes wiggle {
     0%   {margin: 0; transform: rotate(0deg);}
-      50%  {margin: -10px 15px; transform: rotate(-16deg);}
-    100% {margin: 13px -11px;transform: rotate(15deg);}
+    50%  {margin: -10px 15px; transform: rotate(-15deg);}
+    100% {margin: 13px -11px;transform: rotate(16deg);}
+      }
+
+@keyframes float {
+        0%   {opacity: 0.2}
+        50%  {opacity: 0.4}
+        100% {opacity: 0.1}
+          }
+
+@keyframes smallwiggle {
+    0%   {margin: 0; transform: rotate(0deg);}
+    50%  {margin: 0; transform: rotate(5deg);}
+    100% {margin: 0;transform: rotate(-5deg);}
       }
 
   .ground{
@@ -165,6 +181,7 @@ a{
     text-align: right;
     font-size: 1.2em;
     font-family: 'Arial Bold', Arial Bold, sans-serif;
+    font-weight: bold;
     letter-spacing: -0.03em;
     color: yellow;
     -webkit-text-stroke: 0.04em black;
@@ -230,28 +247,30 @@ a{
     color: antiquewhite;
     position: absolute;
     height: 5vh;
-    -webkit-filter: drop-shadow(10px whitesmoke);
-    filter: drop-shadow(10px whitesmoke);
-    transition: 0.2s ease;
+    /* -webkit-filter: drop-shadow(10px whitesmoke);
+    filter: drop-shadow(10px whitesmoke); */
+    transition: 0.5s ease;
     /* transform: translate(-50%,-50%); */
+    opacity: 0.2;
+    animation: float 5s alternate infinite;
+    animation: smallwiggle 5s alternate infinite;
+
+  }
+
+  .fam:hover .letters{
+    opacity: 1;
+    /* -webkit-filter: drop-shadow(2px 2px 10px rgba(255, 255, 255, 0.6));
+    filter: drop-shadow(2px 2px 10px rgba(255, 255, 255, 0.6)); */
   }
 
   .letters:hover {
     /* height: 7vh; */
-    animation: wiggle 5s alternate infinite;
-    -webkit-filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.6));
-      filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.6));
+    /* opacity: 1; */
+    /* animation: wiggle 5s alternate infinite; */
+    /* -webkit-filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.6));
+      filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.6)); */
       cursor: url("images/spoonright.png"), zoom-in;
 
-  }
-
-  /* .letters:hover{
-    animation: wiggle 8s;
-  } */
-
-  .fam:hover .letters{
-    -webkit-filter: drop-shadow(2px 2px 10px rgba(255, 255, 255, 0.6));
-    filter: drop-shadow(2px 2px 10px rgba(255, 255, 255, 0.6));
   }
 
   .ingredient{
