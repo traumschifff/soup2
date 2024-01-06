@@ -361,9 +361,14 @@ a{
     position: relative;
     z-index: 3;
     overflow-y: scroll;
+    scrollbar-width: none;
     -webkit-mask-image: radial-gradient(#000 60%, transparent 85%);
     padding: 100px 0 300px 0;
     /* cursor: default; */
+  }
+
+  .recipe .content::-webkit-scrollbar{
+    display: none;
   }
   .recipe h2{
     text-transform: uppercase;
