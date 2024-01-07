@@ -208,7 +208,6 @@ a{
     overflow-y: scroll;
     scrollbar-width: none;
     -webkit-mask-image:linear-gradient(transparent 0%, #000 10%, #000 90%, transparent 100%);
-    filter: drop-shadow(0 0 20px black);
   }
 
   .bio .biotext::-webkit-scrollbar{
@@ -234,14 +233,7 @@ a{
     width: 100vw;
     max-width: 100vh;
     margin-top:-5vh;
-    /* cursor: url("images/spoonright.png"), zoom-in; */
-    /* border-radius: 45vh; */
-    /* border: 10px lightblue solid; */
-    /* -webkit-filter: drop-shadow(2px 2px 6px rgba(0, 0, 0, 0.6));
-      filter: drop-shadow(2px 2px 6px rgba(0, 0, 0, 0.6)); */
   }
-
-
 
   .letters{
     font-family: arial, 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
@@ -250,40 +242,25 @@ a{
     color: antiquewhite;
     position: absolute;
     height: 5vh;
-    /* -webkit-filter: drop-shadow(10px whitesmoke);
-    filter: drop-shadow(10px whitesmoke); */
     transition: 0.5s ease;
-    /* transform: translate(-50%,-50%); */
     opacity: 0.2;
     animation: float 5s alternate infinite;
     animation: smallwiggle 5s alternate infinite;
-
   }
 
   .fam:hover .letters{
     opacity: 1;
-    /* -webkit-filter: drop-shadow(2px 2px 10px rgba(255, 255, 255, 0.6));
-    filter: drop-shadow(2px 2px 10px rgba(255, 255, 255, 0.6)); */
   }
 
   .letters:hover {
-    /* height: 7vh; */
-    /* opacity: 1; */
-    /* animation: wiggle 5s alternate infinite; */
-    /* -webkit-filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.6));
-      filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.6)); */
       cursor: url("images/spoonright.png"), zoom-in;
-
   }
 
   .ingredient{
     position: absolute;
-    /* display: block; */
     height: 13vh;
-    /* margin-top: 7vh; */
-    /* transform: translate(-50%,-50%); */
     animation: wiggle 10s infinite alternate;
-    /* overflow: hidden; */
+    /* overflow:visible; */
     -webkit-mask-image: linear-gradient(#000 85%, transparent 100%);
     transition: 0.5s ease;
   }
@@ -482,6 +459,8 @@ a{
     }
     .bio .biotext{
       padding-top: 60px;
+      background: radial-gradient(rgba(139, 0, 0, 0.2) 40%, transparent 68%);
+      filter: drop-shadow(0 0 20px black);
     }
 
     .subtitles h2{
@@ -498,6 +477,27 @@ a{
     .recipe .content{
       width: 75%;
     }
+
+    .recipe li{
+      margin-bottom: 1em;
+    }
+
+    .hovertext::after{
+      content: '...';
+    }
+
+    .recipe .hoverimage{
+      display: block;
+      position: relative;
+      transform: none;
+      left: 0;
+      width: 100%;
+      margin:0.5em 0;
+    }
+    /* .recipe .hoverimage::after{
+      content: '...';
+    } */
+
     footer{
       font-size: 0.8em;
     }
