@@ -1,9 +1,10 @@
 * {
 	box-sizing: border-box;
 	/* --bg-color:rgb(42, 59, 42); */
-	--bg-color:rgb(174, 181, 168);
-	--menucolor: rgb(236, 244, 225);
-	--text-color: rgb(28, 36, 28);
+	/* --bg-color:rgb(174, 181, 168); */
+	/* --menucolor: rgb(236, 244, 225); */
+	--logo-color: yellow;
+  --linkclick-color: rgb(95, 96, 141);
 }
 html, body {
 	/* height: 100%; */
@@ -21,116 +22,114 @@ a{
   cursor: url("images/spoonrightfull.png"), zoom-in;
 }
 
-.title{
-    position: fixed;
-    left:20px;
-    top:20px;  
-    text-align: center;
-    z-index: 5;
-    font-size: 1.2em;
-    filter: drop-shadow(0px 0px 0.8em white);
-}
+/* LOGO (Fittererr) */
 
+  .title{
+      position: fixed;
+      left:20px;
+      top:20px;  
+      text-align: center;
+      z-index: 5;
+      font-size: 1.2em;
+      filter: drop-shadow(0px 0px 0.8em white);
+  }
 
+  .title a{
+      text-decoration: none;
+  }
 
-.title a{
-    text-decoration: none;
-}
+  .title h1{
+      font-family: Arial Bold, sans-serif;
+      text-transform: uppercase;
+      font-size: 3em;
+      letter-spacing: -0.03em;
+      color: var(--logo-color);
+      z-index: 1;
+      margin: 0;
+      /* filter: drop-shadow(0px 0px 20px YELLOW); */
+      -webkit-text-stroke: 0.04em black;
+  }
 
-.title h1{
-    font-family: Arial Bold, sans-serif;
-    text-transform: uppercase;
-    font-size: 3em;
-    letter-spacing: -0.03em;
-    color: yellow;
-    z-index: 1;
-    margin: 0;
-    /* filter: drop-shadow(0px 0px 20px YELLOW); */
-    -webkit-text-stroke: 0.04em black;
-}
+  .title:hover {
+      filter: drop-shadow(0px 0px 1em var(--logo-color));
+  }
 
-.title:hover {
-    filter: drop-shadow(0px 0px 1em YELLOW);
-}
+  .slogan{
+      font-family: Arial Bold, Arial Impact, sans-serif sans-serif;
+      /* -webkit-text-stroke: 1px white; */
+      letter-spacing: -0.05em;
+      font-style: italic;
+      margin: 0;
+      margin-top: -10px;
+      font-size: 1.5em;
+  }
 
-.subtitle{
-    font-family: Arial Bold, Arial Impact, sans-serif sans-serif;
-    /* -webkit-text-stroke: 1px white; */
-    letter-spacing: -0.05em;
-    font-style: italic;
-    margin: 0;
-    margin-top: -10px;
-    font-size: 1.5em;
-}
+/* SUBTITLES */
+  .subtitles {
+      position: fixed;
+      left: 5vw;
+      width: 90vw;
+      bottom: 10px;
+      height: 100px;
+      z-index: 2;
+      color: var(--logo-color);
+      font-family: Arial Bold, Arial;
+      letter-spacing: -0.04em;
+      -webkit-text-stroke-color: black;
+      -webkit-text-stroke-width: 0.05em; 
+      filter: drop-shadow(0 0 1em rgba(0,0,0,0.2));
+      text-align: center;
+      /* text-align: -webkit-center; */
+      font-size: 1em;
+      -webkit-mask-image: radial-gradient(#000 50%, transparent 60%);
+  }
 
-.subtitles {
-    position: fixed;
-    left: 5vw;
-    width: 90vw;
-    bottom: 10px;
-    height: 100px;
-    z-index: 2;
-    color: yellow;
-    font-family: Arial Bold, Arial;
-    font-style: italic;
-    letter-spacing: -0.04em;
+  .subtitles a{
+    font-style: normal;
     -webkit-text-stroke-color: black;
-    -webkit-text-stroke-width: 0.05em; 
-    filter: drop-shadow(0 0 1em rgba(0,0,0,0.2));
-    text-align: center;
-    /* text-align: -webkit-center; */
-    font-size: 1em;
-    -webkit-mask-image: radial-gradient(#000 50%, transparent 60%);
-}
+  }
 
-.subtitles a{
-  font-style: normal;
-  /* font-weight: normal; */
-  /* -webkit-text-stroke-width: 0; */
-  -webkit-text-stroke-color: black;
-}
+  .subtitles a:hover{
+    color: var(--linkclick-color);
+  }
 
-.subtitles a:hover{
-  /* text-decoration: underline; */
-  color: grey;
-  /* filter: drop-shadow(0 0 2em rgba(255,255,255,0.7)); */
-}
-/* Hide all sentences by default */
-.sentence {
-    width: 60vw;
-    /* max-width: 90vw; */
-    opacity: 0;
-    position: absolute;
-    bottom: 0;
-    margin-bottom:10px;
-    margin-left: 15vw;
-    font-size: 1.5em;
-    /* transition: opacity 1s ease-in-out; */
-}
+  /* Hide all sentences by default */
+  .sentence {
+      width: 60vw;
+      /* max-width: 90vw; */
+      opacity: 0;
+      position: absolute;
+      bottom: 0;
+      margin-bottom:10px;
+      margin-left: 15vw;
+      /* font-size: 1.5em; */
+      /* transition: opacity 1s ease-in-out; */
+  }
+  /* Show the first sentence */
+  .sentence:first-child {
+      opacity: 1;
+  }
 
-/* Show the first sentence */
-.sentence:first-child {
-    opacity: 1;
-}
+/* ANIMATIONS */
+  @keyframes wiggle {
+      0%   {margin: 0; transform: rotate(0deg);}
+      50%  {margin: -10px 15px; transform: rotate(-15deg);}
+      100% {margin: 13px -11px;transform: rotate(16deg);}
+        }
 
-@keyframes wiggle {
-    0%   {margin: 0; transform: rotate(0deg);}
-    50%  {margin: -10px 15px; transform: rotate(-15deg);}
-    100% {margin: 13px -11px;transform: rotate(16deg);}
-      }
+  @keyframes float {
+          0%   {opacity: 0.2}
+          50%  {opacity: 0.4}
+          100% {opacity: 0.1}
+            }
 
-@keyframes float {
-        0%   {opacity: 0.2}
-        50%  {opacity: 0.4}
-        100% {opacity: 0.1}
-          }
+  @keyframes smallwiggle {
+      0%   {margin: 0; transform: rotate(0deg);}
+      50%  {margin: 0; transform: rotate(5deg);}
+      100% {margin: 0;transform: rotate(-5deg);}
+        }
 
-@keyframes smallwiggle {
-    0%   {margin: 0; transform: rotate(0deg);}
-    50%  {margin: 0; transform: rotate(5deg);}
-    100% {margin: 0;transform: rotate(-5deg);}
-      }
-
+/* BACKGROUND */
   .ground{
     position: fixed;
     background: black;
@@ -143,6 +142,7 @@ a{
     width: 100vw;
   }
 
+/* BIO (about section) */
   .bio{
     position: fixed;
     top: 20px;
@@ -175,7 +175,7 @@ a{
     font-family: 'Arial Bold', Arial Bold, sans-serif;
     font-weight: bold;
     letter-spacing: -0.03em;
-    color: yellow;
+    color: var(--logo-color);
     -webkit-text-stroke: 0.06em black;
     position:fixed;
     width: 360px;
@@ -188,7 +188,7 @@ a{
   .about summary.button::-webkit-details-marker{ display:none; }
 
   .about[open] summary.button{
-    color: rgb(95, 96, 141);
+    color: var(--linkclick-color);
     -webkit-text-stroke: 0.04em black;
     cursor: url("images/spoonrightfull.png"), zoom-in;
   }
@@ -222,6 +222,7 @@ a{
     text-decoration: underline;
   }
   
+/* SOUP (homepage) */
   .soup{
     position: absolute;
     height: 100vh;
@@ -307,6 +308,7 @@ a{
     margin-top: 0px;
   }
 
+/* RECIPE (project page) */
   .recipe{
     visibility: hidden;
     opacity: 0;
@@ -378,9 +380,10 @@ a{
   /* match subtitle styling */
     font-family: Arial Bold, sans-serif;
     font-weight: bold;
+    font-size: 1em;
     text-transform: uppercase;
     letter-spacing: -0.03em;
-    color: yellow;
+    color: var(--logo-color);
     -webkit-text-stroke: 0.04em black;
   }
   .recipe a.link{
@@ -413,31 +416,38 @@ a{
     left: 50%;
     width: 60%;
   }
-  /* .hoverimage:hover{
-    display:block;
-  } */
 
-  .hovericon{
+/* BACK ICON */
+  .homeicon{
+    width: 5vh; 
+    z-index: 2; 
+    position: fixed; 
+    left: 20px; 
+    bottom: 20px;
+  }
+  .hover{
     visibility: hidden;
     z-index: 5;
   }
-  .hovericon:hover{
+  .hover:hover{
     visibility: visible;
   }
-
 
   img:hover + img{
     visibility:visible;
   }
   
-  img.icon:hover{
+  /* img.icon:hover{
     visibility: hidden;
-  }
+  } */
+
+/* FOOTER */
 
   footer{
     position: fixed;
     bottom: 0px;
-    right: 20px
+    right: 20px;
+    opacity: 0.7;
   }
   footer p{
     color: whitesmoke;
@@ -450,47 +460,42 @@ a{
     /* text-decoration; */
   }
 
-      /* Create a CSS animation to toggle sentences */
-  /* @keyframes toggleSentences {
-      0%, 45% {
-          opacity: 1;
-      }
-      50%, 100% {
-          opacity: 0;
-      }
-  }
 
-  .sentence:nth-child(1) {
-      animation: toggleSentences 16s steps(1, end) infinite;
-      animation-delay: 0s;
-  }
-
-  .sentence:nth-child(2) {
-      animation: toggleSentences 16s steps(1, end) infinite;
-      animation-delay: 8s;
-  } */
+/* RESIZING (on mobile) */
 
   @media only screen and (max-width:800px) {
     .title{
       font-size: 0.8em;}
   
-    .sentence{
-      font-size: 1em;
-    }
-    .subtitles h2{
-      font-size: 0.8em;
-    }
     .bio{
       width: 80vw;
     }
     .bio details.about{
-      /* font-size: 1em; */
+      font-size: 1em;
     }
     .about summary.button{
       width: 75vw;
     }
     .bio .biotext{
       padding-top: 60px;
+    }
+
+    .subtitles h2{
+      font-size: 1.2em;
+    }
+
+    .letters{
+      opacity: 0.7;
+    }
+    
+    .recipe{
+      font-size: 1.2em;
+    }
+    .recipe .content{
+      width: 75%;
+    }
+    footer{
+      font-size: 0.8em;
     }
   }
   
@@ -505,20 +510,28 @@ a{
     .bio details.about{
       font-size: 0.8em;
     }
-    .sentence{
-      font-size: 0.6em;
-    }
-    .subtitles{
-      height: 70px;
-    }
-    .subtitles h2{
-      font-size: 0.6em;
-    }
     .bio .biotext{
       padding-top: 40px;
     }
 
+    .subtitles{
+      height: 80px;
+    }
+    .subtitles h2{
+      font-size: 1em;
+    }
+
+    .soup{
+      margin-top:-10vh;
+    }
+
+    .recipe{
+      font-size: 1em;
+    }
+    .recipe .content{
+      width: 75%;
+    }
     footer{
-      font-size: 0.8em;
+      font-size: 0.6em;
     }
   }
