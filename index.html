@@ -56,15 +56,24 @@
         z-index: -1;
     }
 
+    #front{
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      max-height: 60vh;
+      /* z-index: 1; */
+    }
+
     /* Style the hoverable PNG */
     .hoverable {
         position: absolute;
         height: 20vh;
         width: 22vh;
-        top: 42%;
+        top: 50%;
         left: 50%;
         cursor: url("images/spoonright.png"), zoom-in;
-        transform: translate( -50%, -50%);
+        transform: translate( -42%, -138%);
         z-index: 1; /* Place it above the background image */
         display: flex;
         justify-content: center;
@@ -100,6 +109,14 @@
       font-size: 1em;
       cursor: url("images/spoonright.png"), zoom-in;
     }
+
+    @media only screen and (max-width:800px) {
+      button{
+      font-size: 0.8em;
+      /* cursor: url("images/spoonright.png"), zoom-in; */
+      }
+    }
+
 
 /* Create a CSS animation to toggle sentences */
 @keyframes toggleSentences {
@@ -156,7 +173,7 @@
 
     <div class="background">
     <img id="back" src="images/mountain-small.jpg"/>
-    <!-- <img id="front" src="images/sarahstands.png"/> -->
+    <img id="front" src="images/sarahstandssoup.png"/>
       
       <div class="hoverable">
         <!-- <h2 style="font-family: Arial Bold Italic, Arial Bold, Arial; font-size: 1em; color: yellow; filter:drop-shadow(1px 1px 4px black);  margin-top:-30vh; width: 40vh; text-align: center; z-index: 3;">Soon this web-soup will be ready to:</h2> -->
