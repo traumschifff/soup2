@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Subscribe Form for Sarah</title>
+</head>
+<body>
+    <!-- Here's an example of what the email subscribe form might look like. -->
+    <form id="email-form">
+        <label for="email">Email:</label>
+        <input type="email" placeholder="Enter your email" id="email" name="email">
+        <input type="submit" value="Submit">
+    </form>
+    <div id="submission-message"></div>
+
+    <!-- Here's the JavaScript to send the data from the form above to the Google Script -->
+    <script>
+        const emailForm = document.querySelector('#email-form');
+        const emailInput = document.querySelector('#email');
+        const submissionMessage = document.querySelector('#submission-message');
+
+        emailForm.addEventListener('submit', (event) => {
+            event.preventDefault();
+
+            const subscribeData = { email: emailInput.value };
+
+            // Replace with the Google Script App URL
+            fetch('https://script.google.com/macros/s/###################/exec', {
+                method: 'POST',
+                mode: 'no-cors',
+                headers: {
+                    'Content-Type': 'text/plain',
+                },
+                body: JSON.stringify(subscribeData)
+            }).then(response => {
+                console.log('Form submitted');
+                submissionMessage.innerHTML = `<p>Thank you for subscribing!</p>`;
+            }).catch(error => {
+                console.error('Error submitting form', error);
+                submissionMessage.innerHTML = `<p>There was an error. Please try again.</p>`;
+            });
+        });
+    </script>
+</body>
+</html>
