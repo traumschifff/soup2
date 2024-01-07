@@ -84,6 +84,10 @@ a{
       -webkit-mask-image: radial-gradient(#000 50%, transparent 60%);
   }
 
+  marquee{
+    font-style: italic;
+  }
+
   .subtitles a{
     font-style: normal;
     -webkit-text-stroke-color: black;
@@ -487,7 +491,7 @@ a{
     .letters{
       opacity: 0.7;
     }
-    
+
     .recipe{
       font-size: 1.2em;
     }
