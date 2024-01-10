@@ -54,7 +54,12 @@
         <!-- to do -->
         <details closed>
           <summary>Sign up for my Newsletter</summary>
-          By emailing me c-:
+          <form id="email-form">
+            <label for="email">Email:</label>
+            <input type="email" placeholder="Enter your email" id="email" name="email">
+            <input type="submit" value="Submit">
+          </form>
+          <div id="submission-message"></div>
         </details>
         
         <a href="https://www.instagram.com/_fittererr/" target="_blank">> Check out my Instagram</a><br>
@@ -483,6 +488,35 @@
 
   <!-- this closes the ground -->
 </div>
+
+<!-- Here's the JavaScript to send the data from the form above to the Google Script -->
+<script>
+  const emailForm = document.querySelector('#email-form');
+  const emailInput = document.querySelector('#email');
+  const submissionMessage = document.querySelector('#submission-message');
+
+  emailForm.addEventListener('submit', (event) => {
+      event.preventDefault();
+
+      const subscribeData = { email: emailInput.value };
+
+      // Replace with the Google Script App URL
+      fetch('https://script.google.com/macros/s/AKfycbyFN72ghQab_msWhxYeRDO2iU4T2v2urVcP3jsHVRnvr8t0TJL_OoBK09ExxE74A3VEBw/exec', {
+          method: 'POST',
+          mode: 'no-cors',
+          headers: {
+              'Content-Type': 'text/plain',
+          },
+          body: JSON.stringify(subscribeData)
+      }).then(response => {
+          console.log('Form submitted');
+          submissionMessage.innerHTML = `<p>Thank you for subscribing!</p>`;
+      }).catch(error => {
+          console.error('Error submitting form', error);
+          submissionMessage.innerHTML = `<p>There was an error. Please try again.</p>`;
+      });
+  });
+</script>
 
 </body>
 </html>
