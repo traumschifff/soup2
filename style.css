@@ -9,7 +9,8 @@
 html, body {
 	/* height: 100%; */
   	margin: 0;
-	-webkit-font-smoothing: antialiased;    
+	-webkit-font-smoothing: antialiased;
+  font-family: 'Times New Roman', Times, serif;    
 }
 
 body{
@@ -200,6 +201,7 @@ a{
   .bio summary:hover{
     color: rgb(95, 96, 141);
     /* cursor:zoom-in; */
+    cursor: url("images/spoonrightfull.png"), zoom-in;
   }
 
   .bio .biotext{
