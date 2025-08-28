@@ -1,0 +1,30 @@
+[] have CV button with CV and also an Option to download CV as pdf (directly generated from CV on Website so I only Need to update one Thing)
+
+[] get rid of link System in About section
+[] fix Newsletter subscription (BROKEN)
+[] instead of being over soup Icons, text replace soup ingredients --> for more clarity
+[] Change words in soup and make them clickable with contets
+
+[] Maybe add Transparency to Icons and words according to current relevance
+
+[] get rid of Floating Icons and instead lean into the menu vibe?? (Maybe good solution for readability) have a menu as side bar where you can "drop" ingredients into the soup and get shown the description
+[] in this universe of thought, Maybe then have "chef'S favourite" section that highlight Things i'd like to highlight
+[] and there can be meal descriptions, aka Project tags
+[] menu sidebar should be yellow with black text and Little icons
+
+
+[] clean up the code. maye split the html into subpages instead of divisions? 
+
+[] fix the spoon to be more consistent!
+
+[] have a more thought-through mobile Version
+
+[] have a blog Option (noodle words?)
+
+[] optimize seo!! (how? use headers better?)
+
+[] could any soup animations be cool and added?
+
+[] Maybe Change subtitle of logo to be more restaurant-related?
+
+

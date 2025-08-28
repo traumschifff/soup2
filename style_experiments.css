@@ -1,0 +1,555 @@
+* {
+	box-sizing: border-box;
+	/* --bg-color:rgb(42, 59, 42); */
+	/* --bg-color:rgb(174, 181, 168); */
+	/* --menucolor: rgb(236, 244, 225); */
+	--logo-color: yellow;
+  --linkclick-color: rgb(95, 96, 141);
+}
+html, body {
+	/* height: 100%; */
+  	margin: 0;
+	-webkit-font-smoothing: antialiased;
+  font-family: 'Times New Roman', Times, serif;    
+}
+
+body{
+  cursor: url("images/spoonright.png"), pointer;
+}
+
+a{
+  text-decoration: none;
+  color: inherit;
+  cursor: url("images/spoonrightfull.png"), zoom-in;
+}
+
+
+/* LOGO (Fittererr) */
+
+  .title{
+      position: fixed;
+      left:20px;
+      top:20px;  
+      text-align: center;
+      z-index: 5;
+      font-size: 1.2em;
+      filter: drop-shadow(0px 0px 0.8em white);
+  }
+
+  .title a{
+      text-decoration: none;
+  }
+
+  .title h1{
+      font-family: Arial Bold, sans-serif;
+      text-transform: uppercase;
+      font-size: 3em;
+      letter-spacing: -0.03em;
+      color: var(--logo-color);
+      z-index: 1;
+      margin: 0;
+      /* filter: drop-shadow(0px 0px 20px YELLOW); */
+      -webkit-text-stroke: 0.04em black;
+  }
+
+  .title:hover {
+      filter: drop-shadow(0px 0px 1em var(--logo-color));
+  }
+
+  .slogan{
+      font-family: Arial Bold, Arial Impact, sans-serif sans-serif;
+      /* -webkit-text-stroke: 1px white; */
+      letter-spacing: -0.05em;
+      font-style: italic;
+      margin: 0;
+      margin-top: -10px;
+      font-size: 1.5em;
+  }
+
+/* SUBTITLES */
+  .subtitles {
+      position: fixed;
+      left: 5vw;
+      width: 90vw;
+      bottom: 10px;
+      height: 100px;
+      z-index: 2;
+      color: var(--logo-color);
+      font-family: Arial Bold, Arial;
+      letter-spacing: -0.04em;
+      -webkit-text-stroke-color: black;
+      -webkit-text-stroke-width: 0.05em; 
+      filter: drop-shadow(0 0 1em rgba(0,0,0,0.2));
+      text-align: center;
+      /* text-align: -webkit-center; */
+      font-size: 1em;
+      -webkit-mask-image: radial-gradient(#000 50%, transparent 60%);
+  }
+
+  marquee{
+    font-style: italic;
+  }
+
+  .subtitles a{
+    font-style: normal;
+    -webkit-text-stroke-color: black;
+  }
+
+  .subtitles a:hover{
+    color: var(--linkclick-color);
+  }
+
+  /* Hide all sentences by default */
+  .sentence {
+      width: 60vw;
+      /* max-width: 90vw; */
+      opacity: 0;
+      position: absolute;
+      bottom: 0;
+      margin-bottom:10px;
+      margin-left: 15vw;
+      /* font-size: 1.5em; */
+      /* transition: opacity 1s ease-in-out; */
+  }
+  /* Show the first sentence */
+  .sentence:first-child {
+      opacity: 1;
+  }
+
+/* ANIMATIONS */
+  @keyframes wiggle {
+      0%   {margin: 0; transform: rotate(0deg);}
+      50%  {margin: -10px 15px; transform: rotate(-15deg);}
+      100% {margin: 13px -11px;transform: rotate(16deg);}
+        }
+
+  @keyframes float {
+          0%   {opacity: 0.2}
+          50%  {opacity: 0.4}
+          100% {opacity: 0.1}
+            }
+
+  @keyframes smallwiggle {
+      0%   {margin: 0; transform: rotate(0deg);}
+      50%  {margin: 0; transform: rotate(5deg);}
+      100% {margin: 0;transform: rotate(-5deg);}
+        }
+
+/* BACKGROUND */
+  .ground{
+    position: fixed;
+    background: black;
+    background: url(images/soupbackzoom.jpg) no-repeat center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+  }
+
+/* BIO (about section) */
+  .bio{
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 380px;
+    padding: 0 20px 0px 20px;
+    z-index: 4;
+    border-radius: 30px;
+    color: whitesmoke;
+  }
+
+  #about{
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    height: 20vh;
+    z-index: 3;
+    /* transform: translate(0, 50%); */
+  }
+
+  .bio details.about{
+    margin:0;
+    padding:0;
+    font-size: 1.2em;
+    filter: drop-shadow(0 0 20px black);
+  }
+  .bio summary.button {
+    text-align: right;
+    font-size: 1.2em;
+    font-family: 'Arial Bold', Arial Bold, sans-serif;
+    font-weight: bold;
+    letter-spacing: -0.03em;
+    color: var(--logo-color);
+    -webkit-text-stroke: 0.06em black;
+    position: fixed;
+    width: 360px;
+    filter: drop-shadow(0px 0px 0.8em white);
+    z-index: 3;
+    cursor: url("images/spoonrightfull.png"), zoom-in;
+    right: 20px;
+  }
+
+  .about summary.button {
+    top: 20px;
+  }
+  
+  .cv summary.button {
+    top: 65px;
+    right: 62px
+  }
+
+  .bio summary.button::-webkit-details-marker{ display:none; }
+
+  .bio[open] summary.button{
+    color: var(--linkclick-color);
+    -webkit-text-stroke: 0.04em black;
+    cursor: url("images/spoonrightfull.png"), zoom-in;
+  }
+
+  .bio summary:hover{
+    color: rgb(95, 96, 141);
+    /* cursor:zoom-in; */
+    cursor: url("images/spoonrightfull.png"), zoom-in;
+  }
+
+  .bio .biotext{
+    max-height: 90vh;
+    padding-bottom: 30px;
+    overflow-y: scroll;
+    scrollbar-width: none;
+    -webkit-mask-image:linear-gradient(transparent 0%, #000 10%, #000 90%, transparent 100%);
+  }
+
+  .bio .biotext::-webkit-scrollbar{
+    display: none;
+  }
+
+  .bio h2{
+    font-weight: normal;
+  }
+  .bio a{
+    color: white;
+    text-decoration: none;
+  }
+  .bio a:hover{
+    text-decoration: underline;
+  }
+
+
+  
+/* SOUP (homepage) */
+  .soup{
+    position: absolute;
+    height: 100vh;
+    max-height: 100vw;
+    width: 100vw;
+    max-width: 100vh;
+    margin-top:-5vh;
+  }
+
+  .letters{
+    font-family: arial, 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: antiquewhite;
+    position: absolute;
+    height: 5vh;
+    transition: 0.5s ease;
+    opacity: 0.2;
+    animation: float 5s alternate infinite;
+    animation: smallwiggle 5s alternate infinite;
+  }
+
+  .fam:hover .letters{
+    opacity: 1;
+  }
+
+  .letters:hover {
+      cursor: url("images/spoonright.png"), zoom-in;
+  }
+
+  .ingredient{
+    position: absolute;
+    height: 13vh;
+    animation: wiggle 10s infinite alternate;
+    /* overflow:visible; */
+    -webkit-mask-image: linear-gradient(#000 85%, transparent 100%);
+    transition: 0.5s ease;
+  }
+  .ingredient img{
+    width: 15vh;
+    margin-top: 5vh;
+    transition: 0.5s ease;
+    /* transform: translate(-50%,-50%); */
+    cursor: url("images/spoonrightfull.png"), zoom-in;
+  }
+
+  .ingredient:hover{
+    /* height: 100px; */
+    margin-top: 0px;
+    -webkit-filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.6));
+      filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.6));
+  }
+
+  .letters:hover ~ .ingredient img{
+    margin-top: 0px;
+    -webkit-filter: drop-shadow(2px 2px 7px rgba(255, 253, 108, 0.6));
+    filter: drop-shadow(2px 2px 7px rgba(255, 253, 108, 0.6));
+  }
+
+  .ingredient:hover img{
+    margin-top: 0px;
+  }
+
+/* RECIPE (project page) */
+  .recipe{
+    visibility: hidden;
+    opacity: 0;
+    background: url(images/soupbackzoom.jpg) no-repeat center;
+    background-size: cover;
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    transition: all 0.1s;
+    z-index: 3;
+    font-size: 1.5em;
+    color: whitesmoke;
+    /* -webkit-mask-image: radial-gradient(#000 60%, transparent 85%); */
+  }
+
+  .recipe:target {
+    visibility: visible;
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .recipe:target ~ .ingredient img{
+    margin-top: 80px;
+  }
+  .recipe:target ~ .letters{
+    height: 5vh;
+  }
+  .recipe .close{
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    cursor: url("images/spoonrightfull.png"), zoom-in;
+  }
+
+  .recipe .content{
+    width: 60%;
+    max-width: 80vh;
+    height: 100vh;
+    margin: auto;
+    position: relative;
+    z-index: 3;
+    overflow-y: scroll;
+    scrollbar-width: none;
+    -webkit-mask-image: radial-gradient(#000 60%, transparent 85%);
+    padding: 100px 0 300px 0;
+    /* cursor: default; */
+  }
+
+  .recipe .content::-webkit-scrollbar{
+    display: none;
+  }
+  .recipe h2{
+    text-transform: uppercase;
+    font-weight: lighter;
+    text-align: center;
+  }
+
+  .recipe h3 {
+    text-align: center;
+    font-weight: normal;
+    letter-spacing: 0.05em;
+  }
+  .recipe marquee h3{
+  /* match subtitle styling */
+    font-family: Arial Bold, sans-serif;
+    font-weight: bold;
+    font-size: 1em;
+    text-transform: uppercase;
+    letter-spacing: -0.03em;
+    color: var(--logo-color);
+    -webkit-text-stroke: 0.04em black;
+  }
+  .recipe a.link{
+    color: inherit;
+    text-decoration: underline;
+  }
+  .recipe img{
+    width: 100%;
+    display: block;
+    margin: auto;
+    margin-bottom: 10px;
+  }
+
+  .recipe .hovertext{
+    text-decoration: none;
+    font-style: italic;
+    cursor: url("images/spoonrightfull.png"), zoom-in;
+    
+  }
+  .hovertext:hover + .hoverimage, .hoverimage:hover{
+    color:coral;
+    display: block;
+  }
+
+  .recipe .hoverimage{
+    display: none;
+    position: absolute;
+    /* margin-top:0; */
+    transform: translate(-50%,-112%);
+    left: 50%;
+    width: 60%;
+  }
+
+/* BACK ICON */
+  .homeicon{
+    width: 5vh; 
+    z-index: 2; 
+    position: fixed; 
+    left: 20px; 
+    bottom: 20px;
+  }
+  .hover{
+    visibility: hidden;
+    z-index: 5;
+  }
+  .hover:hover{
+    visibility: visible;
+  }
+
+  img:hover + img{
+    visibility:visible;
+  }
+  
+  /* img.icon:hover{
+    visibility: hidden;
+  } */
+
+/* FOOTER */
+
+  footer{
+    position: fixed;
+    bottom: 0px;
+    right: 20px;
+    opacity: 0.7;
+  }
+  footer p{
+    color: whitesmoke;
+    font-size: 0.8em;
+    text-align: left;
+    filter: drop-shadow(1px 1px 5px black);
+  }
+  footer a{
+    color: inherit;
+    /* text-decoration; */
+  }
+
+
+/* RESIZING (on mobile) */
+
+  @media only screen and (max-width:800px) {
+    .title{
+      font-size: 0.8em;}
+  
+    .bio{
+      width: 80vw;
+    }
+    .bio details.about{
+      font-size: 1em;
+    }
+    .about summary.button{
+      width: 75vw;
+    }
+    .bio .biotext{
+      padding-top: 60px;
+      background: radial-gradient(rgba(139, 0, 0, 0.2) 40%, transparent 68%);
+      filter: drop-shadow(0 0 20px black);
+    }
+
+    .subtitles h2{
+      font-size: 1.2em;
+    }
+
+    .letters{
+      opacity: 0.7;
+    }
+
+    .recipe{
+      font-size: 1.2em;
+    }
+    .recipe .content{
+      width: 75%;
+    }
+
+    .recipe li{
+      margin-bottom: 1em;
+    }
+
+    .hovertext::after{
+      content: '...';
+    }
+
+    .recipe .hoverimage{
+      display: block;
+      position: relative;
+      transform: none;
+      left: 0;
+      width: 100%;
+      margin:0.5em 0;
+    }
+    /* .recipe .hoverimage::after{
+      content: '...';
+    } */
+
+    footer{
+      font-size: 0.8em;
+    }
+  }
+  
+  @media only screen and (max-width:450px) {
+    .title{
+      font-size: 0.5em;}
+    
+    .ingredient img{
+      width: 12vh;
+    }
+
+    .bio details.about{
+      font-size: 0.8em;
+    }
+    .bio .biotext{
+      padding-top: 40px;
+    }
+
+    .subtitles{
+      height: 80px;
+    }
+    .subtitles h2{
+      font-size: 1em;
+    }
+
+    .soup{
+      margin-top:-10vh;
+    }
+
+    .recipe{
+      font-size: 1em;
+    }
+    .recipe .content{
+      width: 75%;
+    }
+    footer{
+      font-size: 0.6em;
+    }
+  }
