@@ -7,13 +7,15 @@
 body {
   font-family: 'Courier New', Courier, monospace;
   background-color: white;
-  background-image: white;
+  background-image: url('deko2.jpeg');
+  background-size: cover;
 
   color: black;
   text-align: center;
   font-family: 'Courier New', Courier, monospace;
 
   padding-top: 50px;
+  padding-bottom: 50px;
 }
 
 a {
@@ -26,6 +28,7 @@ h1 {
     text-align: center;
     font-family: 'Courier New', Courier, monospace;
     font-size: 30px;
+    color: black;
 }
 
 h4 {
@@ -33,9 +36,19 @@ h4 {
     text-align: center;
   
 }
+
+mark { 
+  background-color: white;
+  color: black;
+}
+
 img {
  max-width: 200px;
  padding-bottom: 10px;
+}
+
+#sponsors {
+  max-width: 500px;
 }
 
 /* Grid style */
@@ -73,11 +86,12 @@ img {
 <body>
 
 
-<h1>Deine Entscheidung — <br> deine Geschichte!</h1>
+<h1><mark> Deine Entscheidung — <br> deine Geschichte! </mark></h1>
+
 <br>
-<p>Alle Geschichten aus dem WeAre Workshop beim SciEnnsPark, 29. + 30.05.2026</p>
+<mark>Alle Geschichten aus dem WeAre Workshop beim SciEnnsPark, 29. + 30.05.2026</p>
 <br>
-<p>Erstellt mit <a href="https://twinery.org/">Twine</a></p>
+<mark>Erstellt mit <a href="https://twinery.org/">Twine</a></p>
 
 <div class="container">
   
@@ -85,14 +99,16 @@ img {
      <img src="EGAL.png">
     <br>
     <a href="judo.html">Meine Judo Geschichte</a>
-    <p>von Leana</p>
+    <br>
+    <mark>von Leana</mark>
   </div>
 
   <div>
      <img src="Haus.png">
     <br>
     <a href="haus.html">Das Haus der Rätsel</a>
-        <p>von Lotte und Livia</p>
+        <br>
+        <mark>von Lotte und Livia</mark>
 
   </div>
 
@@ -100,7 +116,7 @@ img {
      <img src="tier_fuchs.png">
     <br>
     <a href="tier.html">Adoptiere 1 TIER</a>
-        <p>von Liana und Emma</p>
+        <mark>von Liana und Emma</p>
 
   </div>  
 
@@ -108,18 +124,25 @@ img {
      <img src="spuk_villa.png">
     <br>
     <a href="spuk.html">Die Spuk Villa</a>
-        <p>von Estelle und Pauline</p>
+        <br>
+        <mark>von Estelle und Pauline</p>
 
   </div>
 
 </div>
 
-<p>Danke an alle, die mitgemacht haben. Es war so toll mit euch, ihr wart super! <3 </p>
+<mark>Danke an alle, die mitgemacht haben. Es war so toll mit euch, ihr wart super! <3 </p>
 
 
-<div class="footer"><h4>Ein Workshop von <a href="https://www.fittererr.com/">Sarah Fitterer</a> im Rahmen von WeAre 2026, organisiert durch <a href="https://www.goldextra.com/de/we-are">GoldExtra Salzburg</a></h4></div>
+
+<div class="footer"><mark>Ein Workshop von <a href="https://www.fittererr.com/">Sarah Fitterer</a> im Rahmen von <a href="https://www.goldextra.com/en/we-are/we-are-2026">WeAre 2026</a>, organisiert durch <a href="https://www.goldextra.com/de/we-are">gold extra Salzburg</a>. Der Workshop fand im <a href="https://mint.pongau.org/sciennspark/">SciEnnsPark von MINT Pongau </a>statt.</h4></div>
 <br>
-<img src="sponsors.png" style="height: 150%;">
+<br>
+<mark>Gefördert von: </mark>
+<br>
+<br>
+<br>
+<img id="sponsors" src="sponsors.png" alt="der Stadt Salzburg, Land Salzburg und dem Bundesministerium für Wohnen, Kunst, Kultur, Medien und Sport (BMWKMS)">
 </div>
 
   
